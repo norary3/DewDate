@@ -437,7 +437,7 @@
 				);
 				INFOPLIST_FILE = DewDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tover.DewDate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morado.DewDate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -452,7 +452,7 @@
 				);
 				INFOPLIST_FILE = DewDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tover.DewDate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.morado.DewDate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -522,6 +522,7 @@
 				1C4A0B1E1D37251F0046BC32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C4A0B1F1D37251F0046BC32 /* Build configuration list for PBXNativeTarget "DewDateTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +531,7 @@
 				1C4A0B211D37251F0046BC32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C4A0B221D37251F0046BC32 /* Build configuration list for PBXNativeTarget "DewDateUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +540,7 @@
 				1C4A0B241D37251F0046BC32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
