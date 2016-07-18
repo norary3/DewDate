@@ -66,7 +66,7 @@
 		1C4A0B131D37251F0046BC32 /* DewDateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DewDateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4A0B171D37251F0046BC32 /* DewDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewDateUITests.swift; sourceTree = "<group>"; };
 		1C4A0B191D37251F0046BC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C4A0B251D3725280046BC32 /* PilotPlant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PilotPlant.framework; sourceTree = "<group>"; };
+		1C4A0B251D3725280046BC32 /* PilotPlant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PilotPlant.framework; path = DewDate/PilotPlant.framework; sourceTree = "<group>"; };
 		1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1C4A0B2F1D37269A0046BC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +101,7 @@
 		1C4A0AE81D37251F0046BC32 = {
 			isa = PBXGroup;
 			children = (
+				1C4A0B251D3725280046BC32 /* PilotPlant.framework */,
 				1C4A0AF31D37251F0046BC32 /* DewDate */,
 				1C4A0B0B1D37251F0046BC32 /* DewDateTests */,
 				1C4A0B161D37251F0046BC32 /* DewDateUITests */,
@@ -121,7 +122,6 @@
 		1C4A0AF31D37251F0046BC32 /* DewDate */ = {
 			isa = PBXGroup;
 			children = (
-				1C4A0B251D3725280046BC32 /* PilotPlant.framework */,
 				1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */,
 				1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */,
 				1C4A0AF61D37251F0046BC32 /* ViewController.swift */,
