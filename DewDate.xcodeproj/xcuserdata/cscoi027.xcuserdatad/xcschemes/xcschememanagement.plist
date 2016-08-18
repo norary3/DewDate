@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AutoEventAddActionExt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>DewDate.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1C0D936A1D656CEF006F9FF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C4A0AF01D37251F0046BC32</key>
 		<dict>
 			<key>primary</key>

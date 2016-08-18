@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1C0D93661D65534B006F9FF4 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */; };
+		1C0D936E1D656CF0006F9FF4 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */; };
+		1C0D93711D656CF0006F9FF4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0D936F1D656CF0006F9FF4 /* MainInterface.storyboard */; };
+		1C0D93751D656CF0006F9FF4 /* AutoEventAddActionExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C4A0AF51D37251F0046BC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */; };
 		1C4A0AF71D37251F0046BC32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AF61D37251F0046BC32 /* ViewController.swift */; };
 		1C4A0AFD1D37251F0046BC32 /* DewDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AFB1D37251F0046BC32 /* DewDate.xcdatamodeld */; };
@@ -26,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1C0D93731D656CF0006F9FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C4A0AE91D37251F0046BC32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C0D936A1D656CEF006F9FF4;
+			remoteInfo = AutoEventAddActionExt;
+		};
 		1C4A0B091D37251F0046BC32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1C4A0AE91D37251F0046BC32 /* Project object */;
@@ -43,6 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1C0D93791D656CF0006F9FF4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1C0D93751D656CF0006F9FF4 /* AutoEventAddActionExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C4A0B2B1D37253B0046BC32 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,6 +79,10 @@
 
 /* Begin PBXFileReference section */
 		1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoEventAddActionExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		1C0D93701D656CF0006F9FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1C0D93721D656CF0006F9FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C4A0AF11D37251F0046BC32 /* DewDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DewDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C4A0AF61D37251F0046BC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +105,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C0D93681D656CEF006F9FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C4A0AEE1D37251F0046BC32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0D936C1D656CF0006F9FF4 /* AutoEventAddActionExt */ = {
+			isa = PBXGroup;
+			children = (
+				1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */,
+				1C0D936F1D656CF0006F9FF4 /* MainInterface.storyboard */,
+				1C0D93721D656CF0006F9FF4 /* Info.plist */,
+			);
+			path = AutoEventAddActionExt;
+			sourceTree = "<group>";
+		};
 		1C4A0AE81D37251F0046BC32 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +155,7 @@
 				1C4A0AF31D37251F0046BC32 /* DewDate */,
 				1C4A0B0B1D37251F0046BC32 /* DewDateTests */,
 				1C4A0B161D37251F0046BC32 /* DewDateUITests */,
+				1C0D936C1D656CF0006F9FF4 /* AutoEventAddActionExt */,
 				1C4A0AF21D37251F0046BC32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +166,7 @@
 				1C4A0AF11D37251F0046BC32 /* DewDate.app */,
 				1C4A0B081D37251F0046BC32 /* DewDateTests.xctest */,
 				1C4A0B131D37251F0046BC32 /* DewDateUITests.xctest */,
+				1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +211,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C0D936A1D656CEF006F9FF4 /* AutoEventAddActionExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0D93781D656CF0006F9FF4 /* Build configuration list for PBXNativeTarget "AutoEventAddActionExt" */;
+			buildPhases = (
+				1C0D93671D656CEF006F9FF4 /* Sources */,
+				1C0D93681D656CEF006F9FF4 /* Frameworks */,
+				1C0D93691D656CEF006F9FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoEventAddActionExt;
+			productName = AutoEventAddActionExt;
+			productReference = 1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1C4A0AF01D37251F0046BC32 /* DewDate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C4A0B1C1D37251F0046BC32 /* Build configuration list for PBXNativeTarget "DewDate" */;
@@ -175,10 +236,12 @@
 				1C4A0AEE1D37251F0046BC32 /* Frameworks */,
 				1C4A0AEF1D37251F0046BC32 /* Resources */,
 				1C4A0B2B1D37253B0046BC32 /* Embed Frameworks */,
+				1C0D93791D656CF0006F9FF4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1C0D93741D656CF0006F9FF4 /* PBXTargetDependency */,
 			);
 			name = DewDate;
 			productName = DewDate;
@@ -231,6 +294,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Koreauniv;
 				TargetAttributes = {
+					1C0D936A1D656CEF006F9FF4 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					1C4A0AF01D37251F0046BC32 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -260,11 +326,20 @@
 				1C4A0AF01D37251F0046BC32 /* DewDate */,
 				1C4A0B071D37251F0046BC32 /* DewDateTests */,
 				1C4A0B121D37251F0046BC32 /* DewDateUITests */,
+				1C0D936A1D656CEF006F9FF4 /* AutoEventAddActionExt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C0D93691D656CEF006F9FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0D93711D656CF0006F9FF4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C4A0AEF1D37251F0046BC32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +367,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C0D93671D656CEF006F9FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0D936E1D656CF0006F9FF4 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C4A0AED1D37251F0046BC32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +409,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C0D93741D656CF0006F9FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C0D936A1D656CEF006F9FF4 /* AutoEventAddActionExt */;
+			targetProxy = 1C0D93731D656CF0006F9FF4 /* PBXContainerItemProxy */;
+		};
 		1C4A0B0A1D37251F0046BC32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C4A0AF01D37251F0046BC32 /* DewDate */;
@@ -339,6 +427,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1C0D936F1D656CF0006F9FF4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C0D93701D656CF0006F9FF4 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		1C4A0B001D37251F0046BC32 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,6 +454,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1C0D93761D656CF0006F9FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AutoEventAddActionExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.morado.DewDate.AutoEventAddActionExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1C0D93771D656CF0006F9FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AutoEventAddActionExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.morado.DewDate.AutoEventAddActionExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		1C4A0B1A1D37251F0046BC32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -447,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DewDate",
@@ -462,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DewDate",
@@ -522,6 +642,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C0D93781D656CF0006F9FF4 /* Build configuration list for PBXNativeTarget "AutoEventAddActionExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0D93761D656CF0006F9FF4 /* Debug */,
+				1C0D93771D656CF0006F9FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1C4A0AEC1D37251F0046BC32 /* Build configuration list for PBXProject "DewDate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
