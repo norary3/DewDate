@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0D93661D65534B006F9FF4 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */; };
 		1C4A0AF51D37251F0046BC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */; };
 		1C4A0AF71D37251F0046BC32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AF61D37251F0046BC32 /* ViewController.swift */; };
 		1C4A0AFD1D37251F0046BC32 /* DewDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AFB1D37251F0046BC32 /* DewDate.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		1C4A0AF11D37251F0046BC32 /* DewDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DewDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C4A0AF61D37251F0046BC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		1C4A0AF31D37251F0046BC32 /* DewDate */ = {
 			isa = PBXGroup;
 			children = (
+				1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */,
 				1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */,
 				1CBF44501D5AE9620042068F /* Classes.swift */,
 				1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */,
@@ -291,6 +294,7 @@
 				1C4A0AF71D37251F0046BC32 /* ViewController.swift in Sources */,
 				1CBF44511D5AE9620042068F /* Classes.swift in Sources */,
 				1C4A0AF51D37251F0046BC32 /* AppDelegate.swift in Sources */,
+				1C0D93661D65534B006F9FF4 /* EventTableViewController.swift in Sources */,
 				1C4A0AFD1D37251F0046BC32 /* DewDate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
