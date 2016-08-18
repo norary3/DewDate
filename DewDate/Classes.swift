@@ -29,21 +29,22 @@ enum invitation_status {
 
 class Event{
     var name:String
-    var location:String?
+    //var location:String?
     var isAllDay:Bool = false
-    var start:Time
+    /*var start:Time
     var end:Time
     var repeat_interval:repeat_intervals = repeat_intervals.none    //= ["안함":false,"매일":false,"매주":false,"2주마다":false,"매월":false,"매년":false]
     var move_time:move_times = move_times.none    // = ["5분":false,"15분":false,"30분":false,"1시간":false,"1시간,30분":false,"2시간":false]
-    var alarm:alarm_times = alarm_times.none   //= ["이동 시간 시작 시":false, "이동 시간 5분 전":false]
+    var alarm:alarm_times = alarm_times.none   //= ["이동 시간 시작 시":false, "이동 시간 5분 전":false]*/
     
-    init(name:String, start:Time, end:Time) {
+    init(name:String, isAllDay:Bool) {
         self.name = name
-        self.start = start
-        self.end = end
+        self.isAllDay = true
+        //self.start = start
+        //self.end = end
     }
     
-    init(name:String, location:String, start:Time, end:Time) {
+    /*init(name:String, location:String, start:Time, end:Time) {
         self.name = name
         self.location = location
         self.start = start
@@ -70,7 +71,7 @@ class Event{
         self.repeat_interval = new_repeat_interval
         self.move_time = new_move_time
         self.alarm = new_alarm
-    }
+    }*/
     
     /*
      func mod_naem(new_name:String) -> () {
