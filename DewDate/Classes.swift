@@ -74,7 +74,7 @@ class Event{
     }*/
     
     /*
-     func mod_naem(new_name:String) -> () {
+     func mod_name(new_name:String) -> () {
      self.name = new_name
      }
      

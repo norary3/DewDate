@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import EventKit
 
 class ActionViewController: UIViewController {
     
@@ -20,6 +21,37 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
     
+    
+    var savedEventId : String = ""
+    // Creates an event in the EKEventStore. The method assumes the eventStore is created and
+    // accessible
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+            savedEventId = event.eventIdentifier
+        } catch {
+            print("Bad things happened")
+        }
+    }
+    
+    // Removes an event from the EKEventStore. The method assumes the eventStore is created and
+    // accessible
+    func deleteEvent(eventStore: EKEventStore, eventIdentifier: String) {
+        let eventToRemove = eventStore.eventWithIdentifier(eventIdentifier)
+        if (eventToRemove != nil) {
+            do {
+                try eventStore.removeEvent(eventToRemove!, span: .ThisEvent)
+            } catch {
+                print("Bad things happened")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +66,6 @@ class ActionViewController: UIViewController {
         let handlerCompletion: (NSSecureCoding?, NSError)->Void = { string, error in
             // 핸들러 매개변수로 전달받은 변수를 String형태로 형변환하여 저장
             self.convertingString = string as? String
-            print("HandlerCompletion ==> convertingString : \(self.convertingString)")
             if let parsingString = self.convertingString {
                 // 전달받은 텍스트 데이터를 Parsing
                 /* 전달 받는 텍스트 예시
@@ -121,6 +152,40 @@ class ActionViewController: UIViewController {
         
         // 익스텐션 콘텍스트의 completeRequestReturningItems 메서드에 NSExtensionItem 인스턴스를 인자로 전달하며 호출
         extensionContext!.completeRequestReturningItems([returnItem], completionHandler: nil)
+    }
+    @IBAction func add(sender: AnyObject) {
+        let eventStore = EKEventStore()
+        // startDate formatting
+        // from : "2016년 8월 20일 10:00"
+        // to : "YYYY-MM-DD hh:mm:ss +(-)XXXX"
+        
+        /*
+        let seperators = NSCharacterSet(charactersInString: "년월일:")
+        let startDateString:[String]? = startTextField.text?.componentsSeparatedByCharactersInSet(seperators)
+        //let trimedStartDateString = startDateString.map( { (subString:String) -> _ in subString.stringByTrimmingCharactersInSet( NSCharacterSet.whitespaceAndNewlineCharacterSet()) } )
+        var trimedLines:Array<String>=[]
+        for line in startDateString! {
+            let trimedLine:String = line.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            print(trimedLine)
+            trimedLines.append(trimedLine)
+            print("and")
+        }
+        */
+ 
+        /*
+        let startDate = NSDate()
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60) // One hour
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                self.createEvent(eventStore, title: "지금은1시22분!", startDate: startDate, endDate: endDate)
+            })
+        } else {
+            createEvent(eventStore, title: "지금은1시22분!", startDate: startDate, endDate: endDate)
+        }
+        */
+
     }
 
 }
