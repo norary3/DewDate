@@ -24,6 +24,7 @@
 		1C4A0B2A1D37253B0046BC32 /* PilotPlant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A0B251D3725280046BC32 /* PilotPlant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C4A0B301D37269A0046BC32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A0B2E1D37269A0046BC32 /* Main.storyboard */; };
 		1CBF44511D5AE9620042068F /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF44501D5AE9620042068F /* Classes.swift */; };
+		3D890D0A1D66A1DD00EB57CA /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D890D091D66A1DD00EB57CA /* EventDetailTableViewController.swift */; };
 		3DB38C1A1D6564D100F365B1 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB38C191D6564D100F365B1 /* InitialTableViewController.swift */; };
 		3DB38C1D1D657B0C00F365B1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB38C1C1D657B0C00F365B1 /* EventTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1C4A0B2F1D37269A0046BC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CBF44501D5AE9620042068F /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		3D890D091D66A1DD00EB57CA /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		3DB38C191D6564D100F365B1 /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialTableViewController.swift; path = ../InitialTableViewController.swift; sourceTree = "<group>"; };
 		3DB38C1C1D657B0C00F365B1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,15 +176,16 @@
 		1C4A0AF31D37251F0046BC32 /* DewDate */ = {
 			isa = PBXGroup;
 			children = (
-				1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */,
 				1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */,
 				1CBF44501D5AE9620042068F /* Classes.swift */,
 				1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */,
 				1C4A0AFE1D37251F0046BC32 /* Assets.xcassets */,
 				1C4A0AF61D37251F0046BC32 /* ViewController.swift */,
 				1C4A0B2E1D37269A0046BC32 /* Main.storyboard */,
+				3D890D091D66A1DD00EB57CA /* EventDetailTableViewController.swift */,
 				3DB38C1C1D657B0C00F365B1 /* EventTableViewCell.swift */,
 				3DB38C191D6564D100F365B1 /* InitialTableViewController.swift */,
+				1C0D93651D65534B006F9FF4 /* EventTableViewController.swift */,
 				1C4A0B001D37251F0046BC32 /* LaunchScreen.storyboard */,
 				1C4A0B031D37251F0046BC32 /* Info.plist */,
 				1C4A0AFB1D37251F0046BC32 /* DewDate.xcdatamodeld */,
@@ -382,6 +385,7 @@
 				3DB38C1D1D657B0C00F365B1 /* EventTableViewCell.swift in Sources */,
 				1C4A0B281D3725280046BC32 /* UIViewController+Navigation.swift in Sources */,
 				1C4A0AF71D37251F0046BC32 /* ViewController.swift in Sources */,
+				3D890D0A1D66A1DD00EB57CA /* EventDetailTableViewController.swift in Sources */,
 				1CBF44511D5AE9620042068F /* Classes.swift in Sources */,
 				1C4A0AF51D37251F0046BC32 /* AppDelegate.swift in Sources */,
 				1C0D93661D65534B006F9FF4 /* EventTableViewController.swift in Sources */,
@@ -649,6 +653,7 @@
 				1C0D93771D656CF0006F9FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C4A0AEC1D37251F0046BC32 /* Build configuration list for PBXProject "DewDate" */ = {
 			isa = XCConfigurationList;

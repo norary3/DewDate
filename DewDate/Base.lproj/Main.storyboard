@@ -594,26 +594,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHq-xi-cA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="-717"/>
-        </scene>
-        <!--EventDetialViewContorller-->
-        <scene sceneID="mJ0-57-FrY">
-            <objects>
-                <viewController title="EventDetialViewContorller" id="EzS-d9-7nF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c0c-TF-e2Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="rw8-rw-ida"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5tc-H3-k6a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eGI-a4-UOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1553" y="711"/>
+            <point key="canvasLocation" x="1818" y="-925"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bHR-Ai-zyc">
@@ -1286,7 +1267,7 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                     <navigationItem key="navigationItem" id="cQF-qP-vVW">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="8Dd-yd-ZBQ">
-                            <rect key="frame" x="97" y="8" width="127" height="29"/>
+                            <rect key="frame" x="96.5" y="7.5" width="127" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="신규"/>
@@ -2309,7 +2290,7 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgf-50-Cry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="-445"/>
+            <point key="canvasLocation" x="1660" y="-185"/>
         </scene>
         <!--새로운 이벤트-->
         <scene sceneID="sP1-gq-8DX">
@@ -3643,7 +3624,7 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                                     <outlet property="line_view" destination="wws-3e-R56" id="qQm-76-TwF"/>
                                     <outlet property="sub_label" destination="edf-7F-1UT" id="nI3-cy-sW8"/>
                                     <outlet property="title_label" destination="83d-P4-IBZ" id="IJc-9L-fhn"/>
-                                    <segue destination="EzS-d9-7nF" kind="showDetail" id="nmx-oI-POP"/>
+                                    <segue destination="8zT-dr-s7g" kind="show" id="eXT-WA-w8V"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3674,7 +3655,7 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEL-5e-FjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="750"/>
+            <point key="canvasLocation" x="997" y="541"/>
         </scene>
         <!--Item-->
         <scene sceneID="yRv-4p-JFN">
@@ -3699,7 +3680,85 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8I-LT-I2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="637"/>
+            <point key="canvasLocation" x="607" y="541"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BV2-Kg-sr4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0K9-hJ-WQQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oZh-Wh-RHM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gcs-Jg-pTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="1203"/>
+        </scene>
+        <!--EventDetailTableViewController-->
+        <scene sceneID="9Ud-MM-oJk">
+            <objects>
+                <tableViewController title="EventDetailTableViewController" id="8zT-dr-s7g" customClass="EventDetailTableViewController" customModule="DewDate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5cj-7u-xwW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventDetailCell" textLabel="cUp-KH-nl4" detailTextLabel="9GZ-ao-Cbt" style="IBUITableViewCellStyleValue1" id="IZf-db-gVz" customClass="EventTableViewCell" customModule="DewDate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IZf-db-gVz" id="ACL-B6-aja">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cUp-KH-nl4">
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9GZ-ao-Cbt">
+                                            <rect key="frame" x="263.5" y="12" width="41.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="line_view" destination="ACL-B6-aja" id="pu6-VP-iaK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8zT-dr-s7g" id="Dct-jj-iSP"/>
+                            <outlet property="delegate" destination="8zT-dr-s7g" id="RMR-2t-rdS"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Coz-ew-G8f"/>
+                        <barButtonItem title=" 이벤트 삭제" id="21C-oz-xxz"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="IPh-d3-RsA"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="fkk-Om-HKI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="jWa-wU-mZu">
+                            <connections>
+                                <action selector="navigationBack:" destination="8zT-dr-s7g" id="3jE-s6-KmA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="OxD-dx-pew"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Czl-wF-O7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="985"/>
         </scene>
     </scenes>
     <resources>

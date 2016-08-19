@@ -1,22 +1,18 @@
 //
-//  InitialTableViewController.swift
+//  EventDetailTableViewController.swift
 //  DewDate
 //
-//  Created by kang on 2016. 8. 18..
+//  Created by kang on 2016. 8. 19..
 //  Copyright © 2016년 Koreauniv. All rights reserved.
 //
 
 import UIKit
 
-class InitialTableViewController: UITableViewController {
+class EventDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let dummy1 = Event(name:"교수님면담",isAllDay:true)
-        let dummy2 = Event(name:"점심약속",isAllDay:false)
-        var Events: Array<Event> = [dummy1,dummy2]
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,36 +34,17 @@ class InitialTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        return 3
         
-        return 2
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        
-        
-        
-        //let eventTitles = [Events[0].name, Events[1].name]
-        //let eventTitle = Events[indexPath.row].isAllday
-        
-        let eventTitles = ["교수님 면담", "iOS 수업"]
-        let eventTitle = ["하루 종일","하루종일"]
-
-
-        
-        cell.sub_label.text = "\(eventTitles[indexPath.row])"
-        cell.title_label.text = "하루종일"
 
         return cell
-        
-        /*애플 공식 레퍼런스 코드(참고용)
-         cell.nameLabel.text = meal.name
-         cell.photoImageView.image = meal.photo
-         cell.ratingControl.rating = meal.rating
-         */
     }
     
 
