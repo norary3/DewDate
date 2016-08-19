@@ -10,6 +10,15 @@ import UIKit
 import MobileCoreServices
 import EventKit
 
+extension String {
+    public func indexOfCharacter(char: Character) -> Int? {
+        if let idx = self.characters.indexOf(char) {
+            return self.startIndex.distanceTo(idx)
+        }
+        return nil
+    }
+}
+
 class ActionViewController: UIViewController {
     
     var convertingString: String?
@@ -20,7 +29,6 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
-    
     
     var savedEventId : String = ""
     // Creates an event in the EKEventStore. The method assumes the eventStore is created and
@@ -92,7 +100,11 @@ class ActionViewController: UIViewController {
                         case "위치" :
                             locaiton = back
                         case "시작" :
-                            start = back
+                            var startYear = ""
+                            if let intIndex = back.indexOfCharacter("년") {
+                                startYear = back.substringToIndex(back.startIndex.advancedBy(intIndex))
+                            }
+                            start = startYear
                         case "종료" :
                             end = back
                         default:
