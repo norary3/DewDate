@@ -18,6 +18,7 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
+    @IBOutlet weak var memoTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -42,16 +43,32 @@ class ActionViewController: UIViewController {
                  시작:2016년 8월 20일 10:00
                  종료:2016년 8월 20일 17:00
                 */
-                let lines = parsingString.componentsSeparatedByString("\n")
-                for line in lines {
-                    print (line)
-                    print ("row")
-                }
+                
                 var title:String = ""
                 var locaiton = ""
                 var start = ""
                 var end = ""
+                var memo = ""
                 
+                let lines = parsingString.componentsSeparatedByString("\n")
+                for line in lines {
+                    if line != "" {
+                        let front = line.substringToIndex(line.startIndex.advancedBy(2))
+                        let back = line.substringFromIndex(line.startIndex.advancedBy(3))
+                        switch front {
+                        case "제목" :
+                            title = back
+                        case "위치" :
+                            locaiton = back
+                        case "시작" :
+                            start = back
+                        case "종료" :
+                            end = back
+                        default:
+                            memo += back
+                        }
+                    }
+                }
                 
                 // 메인스레드를 통하여 화면의 TextView에 갱신처리
                 dispatch_async(dispatch_get_main_queue()){
@@ -60,6 +77,7 @@ class ActionViewController: UIViewController {
                     self.locationTextField.text = locaiton
                     self.startTextField.text = start
                     self.endTextField.text = end
+                    self.memoTextField.text = memo
                 }
             }
         }

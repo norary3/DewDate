@@ -32,14 +32,14 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uag-9T-e6i">
-                                <rect key="frame" x="0.0" y="238" width="320" height="290"/>
+                                <rect key="frame" x="0.0" y="280" width="320" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bk7-nG-0Rb">
-                                <rect key="frame" x="16" y="74" width="288" height="156"/>
+                                <rect key="frame" x="16" y="74" width="288" height="198"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-3e-qud">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
@@ -105,6 +105,22 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvQ-Nb-LCT">
+                                        <rect key="frame" x="0.0" y="168" width="288" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-Tg-R9W">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="55p-OP-t4F">
+                                                <rect key="frame" x="30" y="0.0" width="258" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -127,6 +143,7 @@
                     <connections>
                         <outlet property="endTextField" destination="TzO-1K-B3b" id="TbM-I0-KhW"/>
                         <outlet property="locationTextField" destination="Hov-Ik-G3c" id="4h5-n3-iI9"/>
+                        <outlet property="memoTextField" destination="55p-OP-t4F" id="85R-Oe-gKq"/>
                         <outlet property="sampleTextView" destination="uag-9T-e6i" id="elC-0u-u7A"/>
                         <outlet property="startTextField" destination="iqH-UU-cqy" id="aFi-hZ-i3K"/>
                         <outlet property="titleTextField" destination="ymk-sg-BVq" id="HtB-6T-RkM"/>
