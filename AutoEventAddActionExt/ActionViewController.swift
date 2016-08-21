@@ -361,6 +361,11 @@ class ActionViewController: UIViewController {
     
     @IBAction func add(sender: AnyObject) {
         let eventStore = EKEventStore()
+        if let newEventTitle = self.titleTextField.text { self.eventTitle =  newEventTitle }
+        if let newEventLocation = self.locationTextField.text { self.eventLocation = newEventLocation }
+        if let newEventStart = self.startTextField.text?.toDateTime() { self.eventStart = newEventStart }
+        if let newEventEnd = self.endTextField.text?.toDateTime() { self.eventEnd = newEventEnd }
+        if let newEventMemo = self.memoTextField.text { self.eventMemo = newEventMemo }
         
         if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
             eventStore.requestAccessToEntityType(.Event, completion: {
