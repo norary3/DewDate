@@ -177,7 +177,8 @@ class ActionViewController: UIViewController {
                         case "제목" :
                             titleFlag = true
                             self.eventTitle = back
-                        case "위치" :
+                        case "위치",
+                             "장소" :
                             locationFlag = true
                             self.eventLocation = back
                         case "시작" :
@@ -347,8 +348,25 @@ class ActionViewController: UIViewController {
         } else {
             createEvent(eventStore, title: self.eventTitle, location: self.eventLocation, startDate: self.eventStart, endDate: self.eventEnd, note: self.eventMemo)
         }
+        // show adding has done as actionSheet
+        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .ActionSheet)
+        let moveToCalAction = UIAlertAction(title: "DewDate로 이동", style: .Default, handler: { (action:UIAlertAction) -> Void in
+            print ("캘린더로 이동 선택")
+            // TODO : move to Event Table
+            
+        })
+        let exitAction = UIAlertAction(title: "종료", style: .Default, handler: { (action:UIAlertAction) -> Void in
+            print ("종료 선택")
+            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+        })
         
-        self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+        addAlert.addAction(moveToCalAction)
+        addAlert.addAction(exitAction)
+        self.presentViewController(addAlert, animated: true, completion: nil)
+
+        
+        
+        
     }
     
     

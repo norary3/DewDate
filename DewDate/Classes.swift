@@ -26,10 +26,10 @@ enum alarm_times {
 enum invitation_status {
     case accepted, declined, postponed
 }
-
+// 이제 우리는 자체 캘린더 아니고, 애플 캘린더 가져다 쓸꺼니까 이하는 필요가 없음.
 class Event{
     var name:String
-    //var location:String?
+    var location:String?
     var isAllDay:Bool = false
     /*var start:Time
     var end:Time
@@ -73,22 +73,23 @@ class Event{
         self.alarm = new_alarm
     }*/
     
-    /*
+    
      func mod_name(new_name:String) -> () {
-     self.name = new_name
+         self.name = new_name
      }
      
      func mod_location(new_locaiton:String) -> () {
-     self.location = new_locaiton
+         self.location = new_locaiton
      }
      
      func mod_isAllDay() -> () {
-     if self.isAllDay == true {
-     self.isAllDay == false
+        if self.isAllDay == true {
+             self.isAllDay = false
+        } else {
+            self.isAllDay = true
+        }
      }
-     
-     }
-     */
+ 
 }
 
 class Invitation {
@@ -101,3 +102,4 @@ class Invitation {
         self.event = event
     }
 }
+ 
