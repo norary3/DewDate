@@ -7,15 +7,22 @@
 //
 
 import UIKit
+var Events:[Event] = []
+
+
 
 class InitialTableViewController: UITableViewController {
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let dummy1 = Event(name:"교수님면담",isAllDay:true)
         let dummy2 = Event(name:"점심약속",isAllDay:false)
-        var Events: Array<Event> = [dummy1,dummy2]
+        Events += [dummy1,dummy2]
+
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,8 +45,8 @@ class InitialTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        return 2
+
+        return Events.count
     }
 
     
@@ -50,16 +57,17 @@ class InitialTableViewController: UITableViewController {
         
         
         
-        //let eventTitles = [Events[0].name, Events[1].name]
-        //let eventTitle = Events[indexPath.row].isAllday
+        let eventTitles = [Events[0].name, Events[1].name]
+        let eventTitle = Events[indexPath.row].isAllDay
         
-        let eventTitles = ["교수님 면담", "iOS 수업"]
-        let eventTitle = ["하루 종일","하루종일"]
+        //let eventTitles = ["교수님 면담", "iOS 수업"]
+        //let eventTitle = ["하루 종일","하루종일"]
 
 
-        
-        cell.sub_label.text = "\(eventTitles[indexPath.row])"
-        cell.title_label.text = "하루종일"
+        if eventTitle == true{
+            cell.sub_label.text = "하루종일"
+        }
+        cell.title_label.text = eventTitles[indexPath.row]
 
         return cell
         

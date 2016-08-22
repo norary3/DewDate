@@ -8,21 +8,34 @@
 
 import UIKit
 
-class EventDetailTableViewController: UITableViewController {
+class EventDetailTableViewController: UITableViewController{
+    
 
+    //@IBOutlet weak var Normal_tableView: UITableView!
+    
+    var temp_Event:[Event] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let dummy1 = Event(name:"교수님면담",isAllDay:true)
+        let dummy2 = Event(name:"점심약속",isAllDay:false)
+        temp_Event += [dummy1,dummy2]
+        
+        //Top_tableView.dataSource = self
+        //Top_tableView.delegate = self
+        //Top_tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Top_EventDetailTableViewCell")
+        
+//        Normal_tableView.dataSource = self
+//        Normal_tableView.delegate = self
+//        Normal_tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "EventDetailCell")
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     // MARK: - Table view data source
@@ -34,18 +47,51 @@ class EventDetailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 2
         
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        
+        
+        
+        let dataForCell = temp_Event[indexPath.row]
+        var identifier:String
+        var _cell:UITableViewCell?
+        if indexPath.row == 0 {
+            identifier = "TopEventDetailTableViewCell"
+             var _cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as!     TopEventDetailTableViewCell
+            _cell.title_label.text="temp"
+            
+        }
+        else {
+            
+            identifier = "EventDetailCell"
+            var _cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            _cell.textLabel?.text="what shall I write"
+            
+            
+        }
+        
+        var cell:UITableViewCell = _cell!
+        
         return cell
-    }
+
+        
+        
+//        if Top_tableView == self.Top_tableView{
+//            cell = tableView.dequeueReusableCellWithIdentifier("Top_EventDetailCell", forIndexPath: indexPath) as! Top_EventDetailTableViewCell
+//            cell!.textLabel!.text = Temp_Event[1].name
+//        }
+//
+//        if Normal_tableView == self.Normal_tableView{
+//            cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath) as! EventDetailTableViewCell
+//            cell!.textLabel!.text = Temp_Event[0].name
+//        }
+
+
+}
+    
     
 
     /*
