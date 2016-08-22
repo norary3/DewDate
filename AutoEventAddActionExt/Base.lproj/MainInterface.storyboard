@@ -27,7 +27,11 @@
                                                 <action selector="cancel:" destination="ObA-dk-sSI" id="HQg-ct-41h"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Add" id="WYi-yp-eM6"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Add" id="WYi-yp-eM6">
+                                            <connections>
+                                                <action selector="add:" destination="ObA-dk-sSI" id="cti-5S-a1S"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
