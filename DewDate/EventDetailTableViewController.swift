@@ -54,30 +54,34 @@ class EventDetailTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        
-        let dataForCell = temp_Event[indexPath.row]
-        var identifier:String
-        var _cell:UITableViewCell?
         if indexPath.row == 0 {
-            identifier = "TopEventDetailTableViewCell"
-             var _cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as!     TopEventDetailTableViewCell
-            _cell.title_label.text="temp"
+//            let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
+            
+            cell.another_title.text = "asdfsaf"
+            return cell
+            
+        
             
         }
+        
         else {
-            
-            identifier = "EventDetailCell"
-            var _cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
-            _cell.textLabel?.text="what shall I write"
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "EventDetailCell")
             
             
+            cell.textLabel!.text = "what"
+            cell.detailTextLabel?.text = "detail"
+            
+
+            return cell
         }
         
-        var cell:UITableViewCell = _cell!
-        
-        return cell
 
         
+    }
+    
+    
         
 //        if Top_tableView == self.Top_tableView{
 //            cell = tableView.dequeueReusableCellWithIdentifier("Top_EventDetailCell", forIndexPath: indexPath) as! Top_EventDetailTableViewCell
@@ -139,4 +143,4 @@ class EventDetailTableViewController: UITableViewController{
     }
     */
 
-}
+
