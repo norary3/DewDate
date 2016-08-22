@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 var Events:[Event] = []
 
 
@@ -29,6 +30,8 @@ class InitialTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        requestCalendarEntity()
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,6 +129,26 @@ class InitialTableViewController: UITableViewController {
     
     @IBAction func toInitialTableView(unwind:UIStoryboardSegue) {
         
+    }
+    
+    
+    
+    let eventStore = EKEventStore()
+    
+    func requestCalendarEntity() {
+        eventStore.requestAccessToEntityType(.Event, completion: {
+            (granted, error) in
+            
+            if (granted) && (error == nil) {
+                /// 캘린더 목록 가져오기
+                let calenders = self.eventStore.calendarsForEntityType(EKEntityType.Event)
+                for calender in calenders  {
+                    print(calender.title)
+                }
+
+            }
+            
+        })
     }
 
 }
