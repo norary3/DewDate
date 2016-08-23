@@ -339,39 +339,22 @@ class ActionViewController: UIViewController {
         if let newEventStart = self.startTextField.text?.toDateTime() { self.eventStart = newEventStart }
         if let newEventEnd = self.endTextField.text?.toDateTime() { self.eventEnd = newEventEnd }
         if let newEventMemo = self.memoTextField.text { self.eventMemo = newEventMemo }
-        
+  
         if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            print("if")
             eventStore.requestAccessToEntityType(.Event, completion: {
                 granted, error in
-                self.createEvent(eventStore, title: self.eventTitle, location: self.eventLocation, startDate: self.eventStart, endDate: self.eventEnd, note: self.eventMemo)
+                if granted {
+                    self.createEvent(eventStore, title: self.eventTitle, location: self.eventLocation, startDate: self.eventStart, endDate: self.eventEnd, note: self.eventMemo)
+                    self.doneAlert()
+                } else {
+                    self.failAlert()
+                }
             })
         } else {
-            createEvent(eventStore, title: self.eventTitle, location: self.eventLocation, startDate: self.eventStart, endDate: self.eventEnd, note: self.eventMemo)
+            self.createEvent(eventStore, title: self.eventTitle, location: self.eventLocation, startDate: self.eventStart, endDate: self.eventEnd, note: self.eventMemo)
+            self.doneAlert()
         }
-        // show adding has done as actionSheet
-        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .ActionSheet)
-        
-        /*  // only today wiget open its containing app
-        let moveToCalAction = UIAlertAction(title: "DewDate로 이동", style: .Default, handler: { (action:UIAlertAction) -> Void in
-            print ("캘린더로 이동 선택")
-            // TODO : move to Event Table
-            self.goToDewDateCal()
-            
-        })
-        */
-        
-        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
-            print ("종료 선택")
-            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
-        })
-        
-        //addAlert.addAction(moveToCalAction)
-        
-        addAlert.addAction(exitAction)
-        self.presentViewController(addAlert, animated: true, completion: nil)
-
-        
-        
         
     }
     
@@ -393,6 +376,34 @@ class ActionViewController: UIViewController {
         
         let DewDateCalURL = NSURL(string: DewDateCal)
         self.extensionContext?.openURL(DewDateCalURL!, completionHandler: nil)
+    }
+    
+    func doneAlert() {
+        // show adding has done as actionSheet
+        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .ActionSheet)
+        /*  // only today wiget open its containing app
+         let moveToCalAction = UIAlertAction(title: "DewDate로 이동", style: .Default, handler: { (action:UIAlertAction) -> Void in
+         print ("캘린더로 이동 선택")
+         // TODO : move to Event Table
+         self.goToDewDateCal()
+         
+         })
+         */
+        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+            print ("종료 선택")
+            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)})
+        //addAlert.addAction(moveToCalAction)
+        addAlert.addAction(exitAction)
+        self.presentViewController(addAlert, animated: true, completion: nil)
+    }
+    
+    func failAlert() {
+        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정을 저장할 수 없습니다. DewDate가 캘린더에 접근할 수 있도록 허가해 주세요", message: nil, preferredStyle: .ActionSheet)
+        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+            print ("종료 선택")
+            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)})
+        addAlert.addAction(exitAction)
+        self.presentViewController(addAlert, animated: true, completion: nil)
     }
 
 }

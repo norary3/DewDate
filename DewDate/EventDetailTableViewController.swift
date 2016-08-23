@@ -47,9 +47,20 @@ class EventDetailTableViewController: UITableViewController{
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
         
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        if indexPath.row == 0{
+            return 90.0;
+        }
+        else{
+        return 44.0;//Choose your custom row height
+        }
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -59,21 +70,25 @@ class EventDetailTableViewController: UITableViewController{
             
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
             
-            cell.another_title.text = "asdfsaf"
+            cell.another_title.text = "asdasdfsdffsaf"
+            cell.info_label.text="info"
             return cell
             
-        
             
         }
         
+            
+            
         else {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "EventDetailCell")
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
             
+            cell.textLabel!.text = "asahsa"
             
-            cell.textLabel!.text = "what"
-            cell.detailTextLabel?.text = "detail"
+            cell.detailTextLabel!.text = "deeeetaiilll"
+            
             
 
+            
             return cell
         }
         

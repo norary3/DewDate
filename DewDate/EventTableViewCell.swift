@@ -12,6 +12,7 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sub_label: UILabel!
     @IBOutlet weak var title_label: UILabel!
+    @IBOutlet weak var line_color: UIView!
     @IBOutlet weak var line_view: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

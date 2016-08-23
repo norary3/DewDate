@@ -8,13 +8,20 @@
 
 import UIKit
 import EventKit
+import EventKitUI
 var Events:[Event] = []
 
 
 
+<<<<<<< HEAD
+class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
+    
+=======
 class InitialTableViewController: UITableViewController {
     
-    
+    var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
+
+>>>>>>> origin/master
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +29,11 @@ class InitialTableViewController: UITableViewController {
         let dummy1 = Event(name:"교수님면담",isAllDay:true)
         let dummy2 = Event(name:"점심약속",isAllDay:false)
         Events += [dummy1,dummy2]
+        
+<<<<<<< HEAD
+=======
+        
+>>>>>>> origin/master
 
 
         
@@ -31,7 +43,12 @@ class InitialTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        
+    
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        addButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,13 +60,15 @@ class InitialTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return temp.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-
-        return Events.count
+        
+        let values = Array(temp.values)[section]
+        
+        return values.count
     }
 
     
@@ -58,21 +77,26 @@ class InitialTableViewController: UITableViewController {
 
         // Configure the cell...
         
+        let value = Array(temp.values)[indexPath.section]
+        
+        let var1 = Array(value.keys)[indexPath.row]
+        let var2 = Array(value.values )[indexPath.row]
+
         
         
-        let eventTitles = [Events[0].name, Events[1].name]
-        let eventTitle = Events[indexPath.row].isAllDay
+//        let eventTitles = [Events[0].name, Events[1].name]
+//        let eventTitle = Events[indexPath.row].isAllDay
         
         //let eventTitles = ["교수님 면담", "iOS 수업"]
         //let eventTitle = ["하루 종일","하루종일"]
 
 
-        if eventTitle == true{
-            cell.sub_label.text = "하루종일"
-        }
-        cell.title_label.text = eventTitles[indexPath.row]
-
+        cell.sub_label.text = var1
+        cell.title_label.text = "\(var2)"
+        cell.line_color.backgroundColor = UIColor.blackColor()
         return cell
+        
+        
         
         /*애플 공식 레퍼런스 코드(참고용)
          cell.nameLabel.text = meal.name
@@ -81,7 +105,11 @@ class InitialTableViewController: UITableViewController {
          */
     }
     
-
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return Array(temp.keys)[section]
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -149,6 +177,54 @@ class InitialTableViewController: UITableViewController {
             }
             
         })
+    }
+    
+    func addButton() {
+        let controller:EKEventEditViewController = EKEventEditViewController()
+        controller.editViewDelegate = self;
+        presentViewController(controller, animated: true, completion: nil)
+        
+        
+        let eventController = EKEventEditViewController()
+        let store = EKEventStore()
+        eventController.eventStore = store
+        eventController.editViewDelegate = self
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        var event = EKEvent(eventStore: store)
+        event.title = "dd"
+        eventController.event = event
+        
+        
+        let status = EKEventStore.authorizationStatusForEntityType(.Event)
+        switch status {
+        case .Authorized:
+            //self.setNavBarAppearanceStandard()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.presentViewController(eventController, animated: true, completion: nil)
+            })
+            
+        case .NotDetermined:
+            store.requestAccessToEntityType(.Event, completion: { (granted, error) -> Void in
+                if granted == true {
+                    //self.setNavBarAppearanceStandard()
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.presentViewController(eventController, animated: true, completion: nil)
+                    })
+                }
+            })
+        case .Denied, .Restricted:
+            let addAlert = UIAlertController(title: "Access Denied", message: "DewDate가 캘린더에 접근할 수 있도록 허가해 주세요", preferredStyle: .Alert)
+            self.presentViewController(addAlert, animated: true, completion: nil)
+            return
+        }
+        
+    }
+    
+    func eventEditViewController(controller: EKEventEditViewController,
+                                 didCompleteWithAction action: EKEventEditViewAction){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
