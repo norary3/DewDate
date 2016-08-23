@@ -13,37 +13,19 @@ var Events:[Event] = []
 
 
 
-<<<<<<< HEAD
 class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
-    
-<<<<<<< HEAD
-=======
-class InitialTableViewController: UITableViewController {
+
     
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
 
->>>>>>> origin/master
-=======
-    var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
 
->>>>>>> origin/master
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let dummy1 = Event(name:"교수님면담",isAllDay:true)
         let dummy2 = Event(name:"점심약속",isAllDay:false)
         Events += [dummy1,dummy2]
-        
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/master
-=======
-        
->>>>>>> origin/master
-
 
         
         // Uncomment the following line to preserve selection between presentations
@@ -57,7 +39,7 @@ class InitialTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        addButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
