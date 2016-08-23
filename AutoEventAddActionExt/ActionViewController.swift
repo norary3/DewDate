@@ -350,17 +350,23 @@ class ActionViewController: UIViewController {
         }
         // show adding has done as actionSheet
         let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .ActionSheet)
+        
+        /*  // only today wiget open its containing app
         let moveToCalAction = UIAlertAction(title: "DewDate로 이동", style: .Default, handler: { (action:UIAlertAction) -> Void in
             print ("캘린더로 이동 선택")
             // TODO : move to Event Table
+            self.goToDewDateCal()
             
         })
-        let exitAction = UIAlertAction(title: "종료", style: .Default, handler: { (action:UIAlertAction) -> Void in
+        */
+        
+        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
             print ("종료 선택")
             self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
         })
         
-        addAlert.addAction(moveToCalAction)
+        //addAlert.addAction(moveToCalAction)
+        
         addAlert.addAction(exitAction)
         self.presentViewController(addAlert, animated: true, completion: nil)
 
@@ -368,8 +374,6 @@ class ActionViewController: UIViewController {
         
         
     }
-    
-    
     
     @IBAction func cancel(sender: AnyObject) {
         // 이 함수는 입력 아이템을 unpacking하는 과정을 반대로 한다. 첫번째로 수정된 컨텐츠(convertedString)와 컨텐츠 타입 식별자(여기서는 kUTTypeText)로 구성한 새로운 NSItemProvider인스턴스를 생성한다.
@@ -381,6 +385,14 @@ class ActionViewController: UIViewController {
         // 익스텐션 콘텍스트의 completeRequestReturningItems 메서드에 NSExtensionItem 인스턴스를 인자로 전달하며 호출
         //extensionContext!.completeRequestReturningItems([returnItem], completionHandler: nil)
         self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+    }
+    
+    // only today wiget open its containing app
+    func goToDewDateCal() {
+        let DewDateCal = "DewDate://"
+        
+        let DewDateCalURL = NSURL(string: DewDateCal)
+        self.extensionContext?.openURL(DewDateCalURL!, completionHandler: nil)
     }
 
 }
