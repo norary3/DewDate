@@ -16,9 +16,14 @@ var Events:[Event] = []
 <<<<<<< HEAD
 class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
     
+<<<<<<< HEAD
 =======
 class InitialTableViewController: UITableViewController {
     
+    var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
+
+>>>>>>> origin/master
+=======
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
 
 >>>>>>> origin/master
@@ -31,6 +36,10 @@ class InitialTableViewController: UITableViewController {
         Events += [dummy1,dummy2]
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        
+>>>>>>> origin/master
 =======
         
 >>>>>>> origin/master
