@@ -51,6 +51,17 @@ class EventDetailTableViewController: UITableViewController{
         
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        if indexPath.row == 0{
+            return 90.0;
+        }
+        else{
+        return 44.0;//Choose your custom row height
+        }
+    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
@@ -66,9 +77,10 @@ class EventDetailTableViewController: UITableViewController{
             
         }
         
-        else {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "EventDetailCell")
             
+            
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
             
             cell.textLabel!.text = "asahsa"
             

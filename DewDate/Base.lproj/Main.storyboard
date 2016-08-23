@@ -3720,18 +3720,20 @@ S2FLYW9UYWxrLBZFeHRlcm5hbCBBcHBzLENhbmNlbA
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-h4-HZn">
-                                            <rect key="frame" x="8" y="51" width="42" height="21"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I0o-fm-5CU">
+                                            <rect key="frame" x="139" y="47" width="42" height="21"/>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-h4-HZn">
+                                            <rect key="frame" x="139" y="47" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="I0o-fm-5CU" firstAttribute="centerY" secondItem="ACL-B6-aja" secondAttribute="centerY" id="1ue-ij-G6Y"/>
                                         <constraint firstItem="sA4-8T-st7" firstAttribute="leading" secondItem="ACL-B6-aja" secondAttribute="leading" constant="8" id="7Zb-iP-RQW"/>
-                                        <constraint firstItem="5AV-h4-HZn" firstAttribute="centerX" secondItem="sA4-8T-st7" secondAttribute="centerX" id="9dc-xp-sCI"/>
                                         <constraint firstItem="sA4-8T-st7" firstAttribute="top" secondItem="ACL-B6-aja" secondAttribute="top" constant="8" id="WRb-TE-oTE"/>
-                                        <constraint firstItem="5AV-h4-HZn" firstAttribute="centerX" secondItem="sA4-8T-st7" secondAttribute="centerX" id="yyK-JT-Std"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
