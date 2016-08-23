@@ -47,7 +47,7 @@ class EventDetailTableViewController: UITableViewController{
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
         
     }
     
@@ -59,10 +59,10 @@ class EventDetailTableViewController: UITableViewController{
             
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
             
-            cell.another_title.text = "asdfsaf"
+            cell.another_title.text = "asdasdfsdffsaf"
+            cell.info_label.text="info"
             return cell
             
-        
             
         }
         
@@ -70,10 +70,13 @@ class EventDetailTableViewController: UITableViewController{
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "EventDetailCell")
             
             
-            cell.textLabel!.text = "what"
-            cell.detailTextLabel?.text = "detail"
+            cell.textLabel!.text = "asahsa"
+            
+            cell.detailTextLabel!.text = "deeeetaiilll"
+            
             
 
+            
             return cell
         }
         
