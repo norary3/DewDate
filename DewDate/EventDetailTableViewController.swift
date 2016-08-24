@@ -92,10 +92,6 @@ class EventDetailTableViewController: UITableViewController{
     
     
     
-    
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -134,7 +130,7 @@ class EventDetailTableViewController: UITableViewController{
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
             cell.another_title.text = titles[indexPath.row]
             cell.info_label!.text = "From: \(startDates[indexPath.row]) Until: \(endDates[indexPath.row])"
-//            cell.anotherinfo_label!.text = "하루종일"
+            cell.another_info_label!.text = "하루종일"
             return cell
             
             

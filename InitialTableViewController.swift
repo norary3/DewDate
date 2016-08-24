@@ -21,13 +21,16 @@ var hasNotess : [String] = []
 
 
 
+
+
 class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
     
+    var myEvents:[Event] = []
+
     
     let colorArray = Array(arrayLiteral: UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.blueColor(), UIColor.darkGrayColor())
     
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
-
 
 
     override func viewDidAppear(animated: Bool) {
@@ -83,16 +86,30 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
             
             for event in events{
                 
-                titles.append(event.title)
-                startDates.append(event.startDate)
-                endDates.append(event.endDate)
+            
+            let newEvent = Event(title: event.title,location:event.location!, StartDate: event.startDate, EndDate: event.endDate)
+            myEvents += [newEvent]
+                
+            print("read Event = \(event) \nwriteEvent = \(newEvent.title)")
+//                titles.append(event.title)
+//                startDates.append(event.startDate)
+//                endDates.append(event.endDate)
+            
                 
             }
             
         }
     }
     
+    
+    
+    
+    override func viewDidLoad() {
         
+        
+    }
+    
+    
         
 
         
@@ -105,15 +122,15 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return temp.count
+        return myEvents.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        let values = Array(temp.values)[section]
+//        let values = Array(temp.values)[section]
         
-        return values.count
+        return 1
     }
 
         
@@ -122,12 +139,12 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
 
         // Configure the cell...
         
-        let value = Array(temp.values)[indexPath.section]
-        
-        let var1 = Array(value.keys)[indexPath.row]
-        let var2 = Array(value.values )[indexPath.row]
-
-        
+//        let value = Array(temp.values)[indexPath.section]
+//        
+//        let var1 = Array(value.keys)[indexPath.row]
+//        let var2 = Array(value.values )[indexPath.row]
+//
+//        
         
 //        let eventTitles = [Events[0].name, Events[1].name]
 //        let eventTitle = Events[indexPath.row].isAllDay
@@ -140,14 +157,16 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
          sub_label과 title_label의 지정을 반대로 해버림*/
         
         
-        cell.sub_label.text = var1
-        cell.title_label.text = "\(var2)"
+        
+        cell.sub_label.text = String(myEvents[indexPath.row].StartDate)
+        cell.title_label.text = myEvents[indexPath.row].title
+        cell.anothersub_label.text = String(myEvents[indexPath.row].EndDate)
+    
+        
         cell.line_color.backgroundColor = colorArray[random()%5]
         
-
         
         return cell
-        
         
         
         /*애플 공식 레퍼런스 코드(참고용)
@@ -160,7 +179,8 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return Array(temp.keys)[section]
+//        return Array(temp.keys)[section]
+        return String(myEvents[section].StartDate)
     }
     /*
     // Override to support conditional editing of the table view.

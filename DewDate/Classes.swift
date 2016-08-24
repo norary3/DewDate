@@ -28,7 +28,6 @@
 //}
 //// 이제 우리는 자체 캘린더 아니고, 애플 캘린더 가져다 쓸꺼니까 이하는 필요가 없음.
 //class Event{
-//    var name:String
 //    var location:String?
 //    var isAllDay:Bool = false
 //    /*var start:Time
@@ -96,7 +95,7 @@
 //    let invitor:ID
 //    let event:Event
 //    var status:invitation_status = invitation_status.postponed
-//    
+//
 //    init (invitor:ID, event:Event) {
 //        self.invitor = invitor
 //        self.event = event
@@ -104,12 +103,27 @@
 //}
 
 
-//
-//
-//
-//
-//class CaledarEvent{
-//    
-//    
-//}
- 
+import EventKit
+
+class Event{
+    
+    var title:String
+    var location:String
+    var StartDate:NSDate
+    var EndDate:NSDate
+//    var URL:NSURL
+//    var Memo:String
+    
+    init(title:String,location:String,StartDate:NSDate,EndDate:NSDate){
+        self.title = title
+        self.StartDate = StartDate
+        self.EndDate = EndDate
+        self.location = location
+    }
+    
+}
+
+
+// let temp:Event
+// temp.location = "aaaaaa"
+
