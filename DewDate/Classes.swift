@@ -113,26 +113,8 @@ class Event{
     var startDate:NSDate
     var endDate:NSDate
     var eventIdentifier:String
-    var url:NSURL?
-    var memo:String?
-    
-    init() {
-        self.eventIdentifier = ""
-        self.title = ""
-        self.isAllDay = false
-        self.location = ""
-        self.startDate = NSDate()
-        self.endDate = NSDate()
-    }
-    
-    init(title:String,location:String, isAllDay:Bool, startDate:NSDate, endDate:NSDate, eventIdentifier:String){
-        self.eventIdentifier = eventIdentifier
-        self.title = title
-        self.isAllDay = isAllDay
-        self.location = location
-        self.startDate = startDate
-        self.endDate = endDate
-    }
+    var url:NSURL
+    var memo:String
     
     init(title:String,location:String, isAllDay:Bool, startDate:NSDate,endDate:NSDate, eventIdentifier:String, url:NSURL, memo:String){
         self.eventIdentifier = eventIdentifier
@@ -144,6 +126,25 @@ class Event{
         self.url = url
         self.memo = memo
         
+    }
+    
+    init(){
+        self.eventIdentifier = ""
+        self.title = ""
+        self.isAllDay = false
+        self.location = ""
+        self.startDate = NSDate()
+        self.endDate = NSDate()
+        self.url = NSURL(string: "")!
+        self.memo = ""
+        
+    }
+    
+    func arrOfAddInfo()->Array<(String, String)> {
+        var arr:Array<(String, String)> = []
+        if self.url != NSURL(string: "")!  { arr.append( ("url", "\(self.url)") ) }
+        if self.memo != "" { arr.append( ("memo", "\(self.memo)") ) }
+        return arr
     }
     
 }

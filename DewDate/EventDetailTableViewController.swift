@@ -97,20 +97,22 @@ class EventDetailTableViewController: UITableViewController{
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    var currentEvent: Event?=nil
+    var currentEvent:Event = Event()
+    var arrOfAddInfo:Array<(String, String)> = []
 
     @IBAction func deleteEvent(sender: AnyObject) {
         let eventStore = EKEventStore()
         
         if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
             eventStore.requestAccessToEntityType(.Event, completion: { (granted, error) -> Void in
-                self.deleteEvent(eventStore, eventIdentifier: self.currentEvent!.eventIdentifier)
+                self.deleteEvent(eventStore, eventIdentifier: self.currentEvent.eventIdentifier)
             })
         } else {
-            deleteEvent(eventStore, eventIdentifier: currentEvent!.eventIdentifier)
+            deleteEvent(eventStore, eventIdentifier: currentEvent.eventIdentifier)
         }
     }
     override func viewDidLoad() {
+        arrOfAddInfo = currentEvent.arrOfAddInfo()
 
     }
     
@@ -128,8 +130,8 @@ class EventDetailTableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (currentEvent.arrOfAddInfo().count + 1)
 
-        return 2
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
@@ -144,39 +146,46 @@ class EventDetailTableViewController: UITableViewController{
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let theEvent = currentEvent
-        if indexPath.row == 0 {
-            //            let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
+        switch indexPath.row {
+        case 0:
+            //let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
             
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
             
+            let dateFormatter = NSDateFormatter()
+            let locationString:String
             
-            cell.another_title.text = theEvent!.title
-            cell.info_label!.text = "\(theEvent!.startDate)"
-            cell.another_info_label!.text = "\(theEvent!.endDate)"
-            return cell
-            
-            
-        }
-            
-            
-            
-        else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
-            
-//            cell.textLabel!.text = "temp)"
-//            cell.detailTextLabel!.text = "Until: \(endDates[indexPath.row])"
-            
-            cell.textLabel!.text = "장소"
-            cell.detailTextLabel!.text = "\(theEvent!.location)"
-            return cell
-            
-            
+            if currentEvent.location == "" {
+                print("if")
+                locationString = ""
+                cell.info_label!.numberOfLines = 2
+                
+            } else {
+                print("else")
+                locationString = currentEvent.location
+                cell.info_label!.numberOfLines = 3
             }
-        
-        
+            
+            if currentEvent.isAllDay {
+                dateFormatter.dateFormat = "yyyy년 M월 d일 EEEE"
+                cell.info_label!.text = locationString + "\n" + currentEvent.startDate.toTimeString(dateFormatter) + "\n하루종일"
+            } else {
+                dateFormatter.dateFormat = "yyyy년 M월 d일 (E) a h:mm"
+                cell.info_label!.text = locationString + "\n" + currentEvent.startDate.toTimeString(dateFormatter) + "부터\n" +
+                    currentEvent.endDate.toTimeString(dateFormatter) + "까지"
+            }
+            
+            cell.another_title.text = currentEvent.title
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
+            cell.textLabel!.text = self.arrOfAddInfo[0].0
+            cell.detailTextLabel!.text = self.arrOfAddInfo[0].1
+            self.arrOfAddInfo.removeAtIndex(0)
+            
+            return cell
+        }
     }
-    
     
     
     //        if Top_tableView == self.Top_tableView{

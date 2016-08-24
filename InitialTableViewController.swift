@@ -37,12 +37,12 @@ class InitialTableViewController: UITableViewController {
             let events = eventStore.eventsMatchingPredicate(predicate)
             
             for event in events{
-                
                 if let url = event.URL, memo = event.notes {
+                    
                     let newEvent = Event(title: event.title,location:event.location!, isAllDay: event.allDay, startDate: event.startDate, endDate: event.endDate,eventIdentifier: event.eventIdentifier, url: url, memo: memo)
                     myEvents += [newEvent]
                 } else {
-                    let newEvent = Event(title: event.title,location:event.location!, isAllDay: event.allDay, startDate: event.startDate, endDate: event.endDate,eventIdentifier: event.eventIdentifier)
+                    let newEvent = Event(title: event.title,location:event.location!, isAllDay: event.allDay, startDate: event.startDate, endDate: event.endDate,eventIdentifier: event.eventIdentifier, url: NSURL(string: "")!, memo:"")
                     myEvents += [newEvent]
                 }
                 
@@ -61,7 +61,7 @@ class InitialTableViewController: UITableViewController {
 
     //override func viewDidAppear(animated: Bool) {
     override func viewDidLoad() {
-        
+        myEvents = []
         let eventStore = EKEventStore()
         
         switch EKEventStore.authorizationStatusForEntityType(.Event) {
