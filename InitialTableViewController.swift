@@ -78,8 +78,8 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         
         for calendar in calendars {
             
-            let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
-            let oneMonthAfter = NSDate(timeIntervalSinceNow: +60*24*3600)
+            let oneMonthAgo = NSDate(timeIntervalSinceNow: -90*24*3600)
+            let oneMonthAfter = NSDate(timeIntervalSinceNow: +90*24*3600)
             
             
             let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
@@ -101,9 +101,10 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
                 
             }
         }
+        print(myEvents.count)
+
         
     }
-    
     
     
     
@@ -119,7 +120,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return myEvents.count
+        return self.myEvents.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -157,30 +158,27 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         /*시간 문자열 처리*/
         
         
-        let currentEvent:Event = myEvents[number]
-        print(currentEvent.title)
+//        let currentEvent:Event = myEvents[number]
+//        print(currentEvent.title)
         
-        var Stime = String(myEvents[number].StartDate)
+        print(number)
+        var Stime = String(myEvents[indexPath.section].StartDate)
         var StimeArr = Stime.characters.split(" ").map(String.init)
         Stime = StimeArr[1]
         StimeArr = Stime.characters.split(":").map(String.init)
-
         
-        
-        var Etime = String(myEvents[number].EndDate)
+        var Etime = String(myEvents[indexPath.section].EndDate)
         var EtimeArr = Etime.characters.split(" ").map(String.init)
         Etime = EtimeArr[1]
         EtimeArr = Etime.characters.split(":").map(String.init)
         
         cell.sub_label.text = "\(StimeArr[0])시 \(StimeArr[1])분"
-        cell.title_label.text = myEvents[number].title
+        cell.title_label.text = myEvents[indexPath.section].title
         cell.anothersub_label.text = "\(EtimeArr[0])시 \(EtimeArr[1])분"
-    
         
         cell.line_color.backgroundColor = colorArray[random()%5]
-        
-        number = number+1
-        
+        number = number + 1
+        print(indexPath.row)
         return cell
         
         
@@ -342,12 +340,10 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     
         let destVC = segue.destinationViewController as! EventDetailTableViewController
         let selectedIndex:NSIndexPath = self.tableView.indexPathForSelectedRow!
-        let selected:Event = self.myEvents[selectedIndex.row]
-        destVC.currentEvent = selected 
-
+        let selected:Event = self.myEvents[selectedIndex.section]
+        print(selectedIndex.row)
+        destVC.currentEvent = selected
         
-
-    
     }
     
     

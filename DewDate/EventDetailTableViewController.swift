@@ -131,7 +131,7 @@ class EventDetailTableViewController: UITableViewController{
         
         
         let theEvent = currentEvent
-        print(theEvent)
+        print(theEvent!.title)
         if indexPath.row == 0 {
             //            let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
             
@@ -142,6 +142,8 @@ class EventDetailTableViewController: UITableViewController{
             cell.info_label!.text = "\(theEvent!.StartDate)"
             cell.another_info_label!.text = "\(theEvent!.EndDate)"
             return cell
+            
+            
         }
             
             
@@ -152,12 +154,11 @@ class EventDetailTableViewController: UITableViewController{
 //            cell.textLabel!.text = "temp)"
 //            cell.detailTextLabel!.text = "Until: \(endDates[indexPath.row])"
             
-            cell.textLabel!.text = "asahsa"
-            cell.detailTextLabel!.text = "deeeetaiilll"
-            
-            
-            
+            cell.textLabel!.text = "장소"
+            cell.detailTextLabel!.text = "\(theEvent!.location)"
             return cell
+            
+            
             }
         
         
