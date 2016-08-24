@@ -9,39 +9,93 @@
 import UIKit
 import EventKit
 import EventKitUI
-var Events:[Event] = []
+
+
+var titles : [String] = []
+var startDates : [NSDate] = []
+var endDates : [NSDate] = []
+var hasNotess : [String] = []
+
+
+
 
 
 
 class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
-
+    
+    
+    let colorArray = Array(arrayLiteral: UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.blueColor(), UIColor.darkGrayColor())
     
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
 
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let dummy1 = Event(name:"교수님면담",isAllDay:true)
-        let dummy2 = Event(name:"점심약속",isAllDay:false)
-        Events += [dummy1,dummy2]
-
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-    
-    }
-    
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
+        let eventStore = EKEventStore()
+        
+        switch EKEventStore.authorizationStatusForEntityType(.Event) {
+        case .Authorized:
+            readEvents()
+        case .Denied:
+            print("Access denied")
+        case .NotDetermined:
+            
+            eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, NSError) -> Void in
+                if granted {
+                    self.readEvents()
+                    
+                }
+                else{
+                    print("Access denied")
+                }
+                
+                
+                
+            })
+        default:
+            print("Case Default")
+        }
+        self.tableView.reloadData()
     }
+    
+    
+    
+    
+    
+    func readEvents() {
+        
+        
+        
+        
+        let eventStore = EKEventStore()
+        let calendars = eventStore.calendarsForEntityType(.Event)
+        
+        for calendar in calendars {
+            
+            let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
+            let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
+            
+            
+            let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
+            
+            var events = eventStore.eventsMatchingPredicate(predicate)
+            
+            for event in events{
+                
+                titles.append(event.title)
+                startDates.append(event.startDate)
+                endDates.append(event.endDate)
+                
+            }
+            
+        }
+    }
+    
+        
+        
 
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,7 +116,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         return values.count
     }
 
-    
+        
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
 
@@ -81,10 +135,17 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         //let eventTitles = ["교수님 면담", "iOS 수업"]
         //let eventTitle = ["하루 종일","하루종일"]
 
-
+        
+        /*선언할때 잘못해서
+         sub_label과 title_label의 지정을 반대로 해버림*/
+        
+        
         cell.sub_label.text = var1
         cell.title_label.text = "\(var2)"
-        cell.line_color.backgroundColor = UIColor.blackColor()
+        cell.line_color.backgroundColor = colorArray[random()%5]
+        
+
+        
         return cell
         
         
@@ -145,6 +206,8 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
     
     @IBAction func toInitialTableView(unwind:UIStoryboardSegue) {
         
@@ -217,5 +280,14 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
                                  didCompleteWithAction action: EKEventEditViewAction){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    
+    }
+    
+    
 
 }

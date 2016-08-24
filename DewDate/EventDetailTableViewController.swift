@@ -14,80 +14,82 @@ import EventKit
 class EventDetailTableViewController: UITableViewController{
     
     
-    //@IBOutlet weak var Normal_tableView: UITableView!
+//    @IBOutlet weak var Normal_tableView: UITableView!
     
-    var temp_Event:[Event] = []
-    var titles : [String] = []
-    var startDates : [NSDate] = []
-    var endDates : [NSDate] = []
-    var hasNotess : [String] = []
-    
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        let eventStore = EKEventStore()
-        
-        switch EKEventStore.authorizationStatusForEntityType(.Event) {
-        case .Authorized:
-            readEvents()
-        case .Denied:
-            print("Access denied")
-        case .NotDetermined:
-            
-            eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, NSError) -> Void in
-                if granted {
-                    self.readEvents()
-                    
-                }else{
-                    print("Access denied")
-                }
-                
-                
-                
-            })
-        default:
-            print("Case Default")
-        }
-        self.tableView.reloadData()
-    }
-    
-    
-    
-    
-    
-    func readEvents() {
-        
-        
-        
-        
-        let eventStore = EKEventStore()
-        let calendars = eventStore.calendarsForEntityType(.Event)
-        
-        for calendar in calendars {
-            
-            let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
-            let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
-            
-            
-            let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
-            
-            var events = eventStore.eventsMatchingPredicate(predicate)
-            
-            for event in events {
-                
-                titles.append(event.title)
-                startDates.append(event.startDate)
-                endDates.append(event.endDate)
-                
-            }
+//    var temp_Event:[Event] = []
+//    var titles : [String] = []
+//    var startDates : [NSDate] = []
+//    var endDates : [NSDate] = []
+//    var hasNotess : [String] = []
+//    
 
-        }
-        print(titles)
-        print(startDates)
-        print(endDates)
+    
+//    override func viewDidAppear(animated: Bool) {
+//        
+//        let eventStore = EKEventStore()
+//        
+//        switch EKEventStore.authorizationStatusForEntityType(.Event) {
+//        case .Authorized:
+//            readEvents()
+//        case .Denied:
+//            print("Access denied")
+//        case .NotDetermined:
+//            
+//            eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, NSError) -> Void in
+//                if granted {
+//                    self.readEvents()
+//                    
+//                }else{
+//                    print("Access denied")
+//                }
+//                
+//                
+//                
+//            })
+//        default:
+//            print("Case Default")
+//        }
+//        self.tableView.reloadData()
+//    }
+//    
+//    
+//    
+//    
+//    
+//    func readEvents() {
+//        
+//        
+//        
+//        
+//        let eventStore = EKEventStore()
+//        let calendars = eventStore.calendarsForEntityType(.Event)
+//        
+//        for calendar in calendars {
+//            
+//            let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
+//            let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
+//            
+//            
+//            let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
+//            
+//            var events = eventStore.eventsMatchingPredicate(predicate)
+//            
+//            for event in events {
+//                
+//                titles.append(event.title)
+//                startDates.append(event.startDate)
+//                endDates.append(event.endDate)
+//                
+//            }
+//
+//        }
+    
         
-    }
+//        print(titles)
+//        print(startDates)
+//        print(endDates)
+        
+    
     
     
     
@@ -102,12 +104,12 @@ class EventDetailTableViewController: UITableViewController{
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
         return titles.count
         
     }
@@ -132,6 +134,7 @@ class EventDetailTableViewController: UITableViewController{
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
             cell.another_title.text = titles[indexPath.row]
             cell.info_label!.text = "From: \(startDates[indexPath.row]) Until: \(endDates[indexPath.row])"
+//            cell.anotherinfo_label!.text = "하루종일"
             return cell
             
             
@@ -145,6 +148,8 @@ class EventDetailTableViewController: UITableViewController{
             cell.textLabel!.text = "From: \(startDates[indexPath.row])"
             cell.detailTextLabel!.text = "Until: \(endDates[indexPath.row])"
             
+            cell.textLabel!.text = "asahsa"
+            cell.detailTextLabel!.text = "deeeetaiilll"
             
             
             
