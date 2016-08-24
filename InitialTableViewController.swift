@@ -204,7 +204,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         StimeArr = Stime.characters.split("-").map(String.init)
         _Stime = StimeArr[2].characters.split(" ").map(String.init)
         print("\(StimeArr[1])월 \(_Stime[0])일")
-        SavedString = String("\(StimeArr[1])월 \(_Stime[1])일")
+        SavedString = String("\(StimeArr[1])월 \(_Stime[0])일")
         print(SavedString!)
         return SavedString
 //        another_number = another_number+1
@@ -340,7 +340,13 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
-        let destVC 
+        let destVC = segue.destinationViewController as! EventDetailTableViewController
+        let selectedIndex:NSIndexPath = self.tableView.indexPathForSelectedRow!
+        let selected:Event = self.myEvents[selectedIndex.row]
+        destVC.currentEvent = selected 
+
+        
+
     
     }
     

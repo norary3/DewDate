@@ -88,8 +88,12 @@ class EventDetailTableViewController: UITableViewController{
 //        print(titles)
 //        print(startDates)
 //        print(endDates)
-        
     
+    var currentEvent: Event?=nil
+
+    override func viewDidLoad() {
+
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -106,8 +110,7 @@ class EventDetailTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return titles.count
-        
+        return 2
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
@@ -124,16 +127,21 @@ class EventDetailTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
+        
+        
+        
+        let theEvent = currentEvent
+        print(theEvent)
         if indexPath.row == 0 {
             //            let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
             
             let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
-            cell.another_title.text = titles[indexPath.row]
-            cell.info_label!.text = "From: \(startDates[indexPath.row]) Until: \(endDates[indexPath.row])"
-            cell.another_info_label!.text = "하루종일"
+            
+            
+            cell.another_title.text = theEvent!.title
+            cell.info_label!.text = "\(theEvent!.StartDate)"
+            cell.another_info_label!.text = "\(theEvent!.EndDate)"
             return cell
-            
-            
         }
             
             
@@ -141,8 +149,8 @@ class EventDetailTableViewController: UITableViewController{
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
             
-            cell.textLabel!.text = "From: \(startDates[indexPath.row])"
-            cell.detailTextLabel!.text = "Until: \(endDates[indexPath.row])"
+//            cell.textLabel!.text = "temp)"
+//            cell.detailTextLabel!.text = "Until: \(endDates[indexPath.row])"
             
             cell.textLabel!.text = "asahsa"
             cell.detailTextLabel!.text = "deeeetaiilll"
@@ -150,8 +158,7 @@ class EventDetailTableViewController: UITableViewController{
             
             
             return cell
-        }
-        
+            }
         
         
     }
