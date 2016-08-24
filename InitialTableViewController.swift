@@ -17,7 +17,7 @@ var endDates : [NSDate] = []
 var hasNotess : [String] = []
 
 
-
+var number:Int = 0
 
 
 
@@ -26,6 +26,7 @@ var hasNotess : [String] = []
 class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
     
     var myEvents:[Event] = []
+    var another_number:Int = 0
 
     
     let colorArray = Array(arrayLiteral: UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.blueColor(), UIColor.darkGrayColor())
@@ -33,7 +34,8 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
 
 
-    override func viewDidAppear(animated: Bool) {
+    //override func viewDidAppear(animated: Bool) {
+    override func viewDidLoad() {
         
         let eventStore = EKEventStore()
         
@@ -77,7 +79,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         for calendar in calendars {
             
             let oneMonthAgo = NSDate(timeIntervalSinceNow: -30*24*3600)
-            let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
+            let oneMonthAfter = NSDate(timeIntervalSinceNow: +60*24*3600)
             
             
             let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
@@ -88,26 +90,21 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
                 
             
             let newEvent = Event(title: event.title,location:event.location!, StartDate: event.startDate, EndDate: event.endDate)
+                print ("newEventReadTitle = \(event.title)\nnewEventWriteTitle=\(newEvent.title)")
             myEvents += [newEvent]
                 
-            print("read Event = \(event) \nwriteEvent = \(newEvent.title)")
+//            print("read Event = \(event) \nwriteEvent = \(newEvent.title)")
 //                titles.append(event.title)
 //                startDates.append(event.startDate)
 //                endDates.append(event.endDate)
             
                 
             }
-            
         }
-    }
-    
-    
-    
-    
-    override func viewDidLoad() {
-        
         
     }
+    
+    
     
     
         
@@ -156,15 +153,33 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         /*선언할때 잘못해서
          sub_label과 title_label의 지정을 반대로 해버림*/
         
+
+        /*시간 문자열 처리*/
         
         
-        cell.sub_label.text = String(myEvents[indexPath.row].StartDate)
-        cell.title_label.text = myEvents[indexPath.row].title
-        cell.anothersub_label.text = String(myEvents[indexPath.row].EndDate)
+        let currentEvent:Event = myEvents[number]
+        print(currentEvent.title)
+        
+        var Stime = String(myEvents[number].StartDate)
+        var StimeArr = Stime.characters.split(" ").map(String.init)
+        Stime = StimeArr[1]
+        StimeArr = Stime.characters.split(":").map(String.init)
+
+        
+        
+        var Etime = String(myEvents[number].EndDate)
+        var EtimeArr = Etime.characters.split(" ").map(String.init)
+        Etime = EtimeArr[1]
+        EtimeArr = Etime.characters.split(":").map(String.init)
+        
+        cell.sub_label.text = "\(StimeArr[0])시 \(StimeArr[1])분"
+        cell.title_label.text = myEvents[number].title
+        cell.anothersub_label.text = "\(EtimeArr[0])시 \(EtimeArr[1])분"
     
         
         cell.line_color.backgroundColor = colorArray[random()%5]
         
+        number = number+1
         
         return cell
         
@@ -179,8 +194,28 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-//        return Array(temp.keys)[section]
-        return String(myEvents[section].StartDate)
+        var StimeArr:[String] = []
+        var _Stime:[String] = []
+        var Stime:String
+        var SavedString:String? = nil
+        
+
+        Stime = String(myEvents[section].StartDate)
+        StimeArr = Stime.characters.split("-").map(String.init)
+        _Stime = StimeArr[2].characters.split(" ").map(String.init)
+        print("\(StimeArr[1])월 \(_Stime[0])일")
+        SavedString = String("\(StimeArr[1])월 \(_Stime[1])일")
+        print(SavedString!)
+        return SavedString
+//        another_number = another_number+1
+//        if another_number == myEvents.count{
+//            another_number = another_number-1
+//        }
+        
+
+//        return String(myEvents[section].StartDate)
+        
+
     }
     /*
     // Override to support conditional editing of the table view.
@@ -305,6 +340,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
+        let destVC 
     
     }
     
