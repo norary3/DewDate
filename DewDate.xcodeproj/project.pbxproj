@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C0D936E1D656CF0006F9FF4 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */; };
 		1C0D93711D656CF0006F9FF4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0D936F1D656CF0006F9FF4 /* MainInterface.storyboard */; };
 		1C0D93751D656CF0006F9FF4 /* AutoEventAddActionExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C4A0AF51D37251F0046BC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */; };
@@ -81,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		1C0D936B1D656CEF006F9FF4 /* AutoEventAddActionExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoEventAddActionExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		1C0D93701D656CF0006F9FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		1C0D93721D656CF0006F9FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C4A0AF11D37251F0046BC32 /* DewDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DewDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +143,6 @@
 		1C0D936C1D656CF0006F9FF4 /* AutoEventAddActionExt */ = {
 			isa = PBXGroup;
 			children = (
-				1C0D936D1D656CF0006F9FF4 /* ActionViewController.swift */,
 				1C0D936F1D656CF0006F9FF4 /* MainInterface.storyboard */,
 				1C894DF41D6C18C200E1CF12 /* ActionTableViewController.swift */,
 				1C0D93721D656CF0006F9FF4 /* Info.plist */,
@@ -378,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0D936E1D656CF0006F9FF4 /* ActionViewController.swift in Sources */,
 				1C894DF51D6C18C200E1CF12 /* ActionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
