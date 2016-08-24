@@ -109,16 +109,41 @@ class Event{
     
     var title:String
     var location:String
-    var StartDate:NSDate
-    var EndDate:NSDate
-//    var URL:NSURL
-//    var Memo:String
+    var isAllDay:Bool
+    var startDate:NSDate
+    var endDate:NSDate
+    var eventIdentifier:String
+    var url:NSURL?
+    var memo:String?
     
-    init(title:String,location:String,StartDate:NSDate,EndDate:NSDate){
+    init() {
+        self.eventIdentifier = ""
+        self.title = ""
+        self.isAllDay = false
+        self.location = ""
+        self.startDate = NSDate()
+        self.endDate = NSDate()
+    }
+    
+    init(title:String,location:String, isAllDay:Bool, startDate:NSDate, endDate:NSDate, eventIdentifier:String){
+        self.eventIdentifier = eventIdentifier
         self.title = title
-        self.StartDate = StartDate
-        self.EndDate = EndDate
+        self.isAllDay = isAllDay
         self.location = location
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+    
+    init(title:String,location:String, isAllDay:Bool, startDate:NSDate,endDate:NSDate, eventIdentifier:String, url:NSURL, memo:String){
+        self.eventIdentifier = eventIdentifier
+        self.title = title
+        self.isAllDay = isAllDay
+        self.location = location
+        self.startDate = startDate
+        self.endDate = endDate
+        self.url = url
+        self.memo = memo
+        
     }
     
 }

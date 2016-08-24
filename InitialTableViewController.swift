@@ -8,8 +8,6 @@
 
 import UIKit
 import EventKit
-import EventKitUI
-
 
 var titles : [String] = []
 var startDates : [NSDate] = []
@@ -19,19 +17,46 @@ var hasNotess : [String] = []
 
 var number:Int = 0
 
-
-
-
-
-class InitialTableViewController: UITableViewController, EKEventEditViewDelegate {
-    
+class InitialTableViewController: UITableViewController {
     var myEvents:[Event] = []
     var another_number:Int = 0
-
     
     let colorArray = Array(arrayLiteral: UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.blueColor(), UIColor.darkGrayColor())
     
     var temp : [String:[String:Int]] = ["MeetingRooms":["what":1,"Should":2],"Temp":["I":3,"write":4]]
+    
+    func readEvents() {
+        let eventStore = EKEventStore()
+        let calendars = eventStore.calendarsForEntityType(.Event)
+        for calendar in calendars {
+            let oneMonthAgo = NSDate(timeIntervalSinceNow: -90*24*3600)
+            let oneMonthAfter = NSDate(timeIntervalSinceNow: +90*24*3600)
+            
+            let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
+            
+            let events = eventStore.eventsMatchingPredicate(predicate)
+            
+            for event in events{
+                
+                if let url = event.URL, memo = event.notes {
+                    let newEvent = Event(title: event.title,location:event.location!, isAllDay: event.allDay, startDate: event.startDate, endDate: event.endDate,eventIdentifier: event.eventIdentifier, url: url, memo: memo)
+                    myEvents += [newEvent]
+                } else {
+                    let newEvent = Event(title: event.title,location:event.location!, isAllDay: event.allDay, startDate: event.startDate, endDate: event.endDate,eventIdentifier: event.eventIdentifier)
+                    myEvents += [newEvent]
+                }
+                
+            }
+        }
+        myEvents.sortInPlace( { (older, recent) -> Bool in
+            if older.startDate.compare(recent.startDate) == NSComparisonResult.OrderedAscending {
+                return true
+            } else {
+                return false
+            }
+        })
+        //print("myEvents.count: \(myEvents.count)")
+    }
 
 
     //override func viewDidAppear(animated: Bool) {
@@ -40,77 +65,24 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         let eventStore = EKEventStore()
         
         switch EKEventStore.authorizationStatusForEntityType(.Event) {
-        case .Authorized:
-            readEvents()
-        case .Denied:
-            print("Access denied")
-        case .NotDetermined:
-            
-            eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, NSError) -> Void in
-                if granted {
-                    self.readEvents()
-                    
-                }
-                else{
-                    print("Access denied")
-                }
-                
-                
-                
-            })
-        default:
-            print("Case Default")
-        }
-        self.tableView.reloadData()
-    }
-    
-    
-    
-    
-    
-    func readEvents() {
-        
-        
-        
-        
-        let eventStore = EKEventStore()
-        let calendars = eventStore.calendarsForEntityType(.Event)
-        
-        for calendar in calendars {
-            
-            let oneMonthAgo = NSDate(timeIntervalSinceNow: -90*24*3600)
-            let oneMonthAfter = NSDate(timeIntervalSinceNow: +90*24*3600)
-            
-            
-            let predicate = eventStore.predicateForEventsWithStartDate(oneMonthAgo, endDate: oneMonthAfter, calendars: [calendar])
-            
-            var events = eventStore.eventsMatchingPredicate(predicate)
-            
-            for event in events{
-                
-            
-            let newEvent = Event(title: event.title,location:event.location!, StartDate: event.startDate, EndDate: event.endDate)
-                print ("newEventReadTitle = \(event.title)\nnewEventWriteTitle=\(newEvent.title)")
-            myEvents += [newEvent]
-                
-//            print("read Event = \(event) \nwriteEvent = \(newEvent.title)")
-//                titles.append(event.title)
-//                startDates.append(event.startDate)
-//                endDates.append(event.endDate)
-            
-                
+            case .Authorized:
+                readEvents()
+            case .Denied:
+                print("Access denied")
+            case .NotDetermined:
+                eventStore.requestAccessToEntityType(.Event, completion: { (granted: Bool, NSError) -> Void in
+                    if granted {
+                        self.readEvents()
+                    }
+                    else{
+                        print("Access denied")
+                    }
+                })
+            default:
+                print("Case Default")
             }
-        }
-        print(myEvents.count)
-
-        
     }
-    
-    
-    
-        
 
-        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -161,24 +133,29 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
 //        let currentEvent:Event = myEvents[number]
 //        print(currentEvent.title)
         
-        print(number)
-        var Stime = String(myEvents[indexPath.section].StartDate)
-        var StimeArr = Stime.characters.split(" ").map(String.init)
-        Stime = StimeArr[1]
-        StimeArr = Stime.characters.split(":").map(String.init)
+        if myEvents[indexPath.section].isAllDay {
+            cell.sub_label.text = "하루종일"
+            cell.anothersub_label.text = " "
+        } else {
+            var Stime = String(myEvents[indexPath.section].startDate)
+            var StimeArr = Stime.characters.split(" ").map(String.init)
+            Stime = StimeArr[1]
+            StimeArr = Stime.characters.split(":").map(String.init)
+            
+            var Etime = String(myEvents[indexPath.section].endDate)
+            var EtimeArr = Etime.characters.split(" ").map(String.init)
+            Etime = EtimeArr[1]
+            EtimeArr = Etime.characters.split(":").map(String.init)
+            
+            cell.sub_label.text = "\(StimeArr[0])시 \(StimeArr[1])분"
+            cell.anothersub_label.text = "\(EtimeArr[0])시 \(EtimeArr[1])분"
+        }
         
-        var Etime = String(myEvents[indexPath.section].EndDate)
-        var EtimeArr = Etime.characters.split(" ").map(String.init)
-        Etime = EtimeArr[1]
-        EtimeArr = Etime.characters.split(":").map(String.init)
-        
-        cell.sub_label.text = "\(StimeArr[0])시 \(StimeArr[1])분"
         cell.title_label.text = myEvents[indexPath.section].title
-        cell.anothersub_label.text = "\(EtimeArr[0])시 \(EtimeArr[1])분"
         
         cell.line_color.backgroundColor = colorArray[random()%5]
         number = number + 1
-        print(indexPath.row)
+
         return cell
         
         
@@ -189,6 +166,10 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
          */
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 28.0
+    }
+    
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -197,13 +178,12 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
         var Stime:String
         var SavedString:String? = nil
         
-
-        Stime = String(myEvents[section].StartDate)
+        
+        Stime = String(myEvents[section].startDate)
         StimeArr = Stime.characters.split("-").map(String.init)
         _Stime = StimeArr[2].characters.split(" ").map(String.init)
-        print("\(StimeArr[1])월 \(_Stime[0])일")
         SavedString = String("\(StimeArr[1])월 \(_Stime[0])일")
-        print(SavedString!)
+
         return SavedString
 //        another_number = another_number+1
 //        if another_number == myEvents.count{
@@ -260,89 +240,27 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     }
     */
     
-    
-    
-    @IBAction func toInitialTableView(unwind:UIStoryboardSegue) {
+    override func viewWillAppear(animated: Bool) {
+        myEvents = []
+        readEvents()
         self.tableView.reloadData()
     }
     
     
+    @IBAction func toInitialTableView(unwind:UIStoryboardSegue) {
+    }
     
     let eventStore = EKEventStore()
-    
-    func requestCalendarEntity() {
-        eventStore.requestAccessToEntityType(.Event, completion: {
-            (granted, error) in
-            
-            if (granted) && (error == nil) {
-                /// 캘린더 목록 가져오기
-                let calenders = self.eventStore.calendarsForEntityType(EKEntityType.Event)
-                for calender in calenders  {
-                    print(calender.title)
-                }
-
-            }
-            
-        })
-    }
-    
-    func addButton() {
-        let controller:EKEventEditViewController = EKEventEditViewController()
-        controller.editViewDelegate = self;
-        presentViewController(controller, animated: true, completion: nil)
-        
-        
-        let eventController = EKEventEditViewController()
-        let store = EKEventStore()
-        eventController.eventStore = store
-        eventController.editViewDelegate = self
-        //self.dismissViewControllerAnimated(true, completion: nil)
-        
-        
-        var event = EKEvent(eventStore: store)
-        event.title = "dd"
-        eventController.event = event
-        
-        
-        let status = EKEventStore.authorizationStatusForEntityType(.Event)
-        switch status {
-        case .Authorized:
-            //self.setNavBarAppearanceStandard()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presentViewController(eventController, animated: true, completion: nil)
-            })
-            
-        case .NotDetermined:
-            store.requestAccessToEntityType(.Event, completion: { (granted, error) -> Void in
-                if granted == true {
-                    //self.setNavBarAppearanceStandard()
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.presentViewController(eventController, animated: true, completion: nil)
-                    })
-                }
-            })
-        case .Denied, .Restricted:
-            let addAlert = UIAlertController(title: "Access Denied", message: "DewDate가 캘린더에 접근할 수 있도록 허가해 주세요", preferredStyle: .Alert)
-            self.presentViewController(addAlert, animated: true, completion: nil)
-            return
-        }
-        
-    }
-    
-    func eventEditViewController(controller: EKEventEditViewController,
-                                 didCompleteWithAction action: EKEventEditViewAction){
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-        let destVC = segue.destinationViewController as! EventDetailTableViewController
-        let selectedIndex:NSIndexPath = self.tableView.indexPathForSelectedRow!
-        let selected:Event = self.myEvents[selectedIndex.section]
-        print(selectedIndex.row)
-        destVC.currentEvent = selected
+        if segue.identifier == "ToDetail" {
+            let destVC = segue.destinationViewController as! EventDetailTableViewController
+            let selectedIndex:NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let selected:Event = self.myEvents[selectedIndex.section]
+            destVC.currentEvent = selected
+        }
         
     }
     

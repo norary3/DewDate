@@ -84,13 +84,32 @@ class EventDetailTableViewController: UITableViewController{
 //
 //        }
     
-        
-//        print(titles)
-//        print(startDates)
-//        print(endDates)
+
+    func deleteEvent(eventStore: EKEventStore, eventIdentifier: String) {
+        let eventToRemove = eventStore.eventWithIdentifier(eventIdentifier)
+        if (eventToRemove != nil) {
+            do {
+                try eventStore.removeEvent(eventToRemove!, span: .ThisEvent)
+            } catch {
+                print("Bad things happened")
+            }
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     var currentEvent: Event?=nil
 
+    @IBAction func deleteEvent(sender: AnyObject) {
+        let eventStore = EKEventStore()
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: { (granted, error) -> Void in
+                self.deleteEvent(eventStore, eventIdentifier: self.currentEvent!.eventIdentifier)
+            })
+        } else {
+            deleteEvent(eventStore, eventIdentifier: currentEvent!.eventIdentifier)
+        }
+    }
     override func viewDidLoad() {
 
     }
@@ -125,13 +144,7 @@ class EventDetailTableViewController: UITableViewController{
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
-        
-        
-        
         let theEvent = currentEvent
-        print(theEvent!.title)
         if indexPath.row == 0 {
             //            let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
             
@@ -139,8 +152,8 @@ class EventDetailTableViewController: UITableViewController{
             
             
             cell.another_title.text = theEvent!.title
-            cell.info_label!.text = "\(theEvent!.StartDate)"
-            cell.another_info_label!.text = "\(theEvent!.EndDate)"
+            cell.info_label!.text = "\(theEvent!.startDate)"
+            cell.another_info_label!.text = "\(theEvent!.endDate)"
             return cell
             
             

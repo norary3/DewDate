@@ -248,6 +248,7 @@ class AddTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
         if segue.identifier == "AddUnwind" {
             let eventStore = EKEventStore()
+            
             if let newEventTitle = self.titleTextField.text { self.eventTitle =  newEventTitle }
             if let newEventLocation = self.locationTextField.text { self.eventLocation = newEventLocation }
             if let newEventStart = self.startLabel.text?.toDateTime(self.dateFormatter) { self.eventStart = newEventStart }
@@ -267,6 +268,7 @@ class AddTableViewController: UITableViewController {
             } else {
                 self.createEvent(eventStore)
             }
+
         }
     }
     
