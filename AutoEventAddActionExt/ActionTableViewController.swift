@@ -131,7 +131,6 @@ class ActionTableViewController: UITableViewController {
         if let newEventMemo = self.memoTextField.text { self.eventMemo = newEventMemo }
         
         if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-            print("if")
             eventStore.requestAccessToEntityType(.Event, completion: {
                 granted, error in
                 if granted {

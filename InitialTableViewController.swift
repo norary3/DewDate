@@ -230,7 +230,7 @@ class InitialTableViewController: UITableViewController, EKEventEditViewDelegate
     
     
     @IBAction func toInitialTableView(unwind:UIStoryboardSegue) {
-        
+        self.tableView.reloadData()
     }
     
     
