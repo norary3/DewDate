@@ -153,7 +153,7 @@ class InitialTableViewController: UITableViewController {
         
         cell.title_label.text = myEvents[indexPath.section].title
         
-        cell.line_color.backgroundColor = colorArray[random()%5]
+        cell.line_color.backgroundColor = colorArray[Int(arc4random())%5]
         number = number + 1
 
         return cell

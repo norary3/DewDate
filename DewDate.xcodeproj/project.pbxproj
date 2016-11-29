@@ -16,10 +16,6 @@
 		1C4A0B021D37251F0046BC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A0B001D37251F0046BC32 /* LaunchScreen.storyboard */; };
 		1C4A0B0D1D37251F0046BC32 /* DewDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0B0C1D37251F0046BC32 /* DewDateTests.swift */; };
 		1C4A0B181D37251F0046BC32 /* DewDateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0B171D37251F0046BC32 /* DewDateUITests.swift */; };
-		1C4A0B271D3725280046BC32 /* PilotPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A0B251D3725280046BC32 /* PilotPlant.framework */; };
-		1C4A0B281D3725280046BC32 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */; };
-		1C4A0B291D37253B0046BC32 /* PilotPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A0B251D3725280046BC32 /* PilotPlant.framework */; };
-		1C4A0B2A1D37253B0046BC32 /* PilotPlant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4A0B251D3725280046BC32 /* PilotPlant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C4A0B301D37269A0046BC32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A0B2E1D37269A0046BC32 /* Main.storyboard */; };
 		1C894DF51D6C18C200E1CF12 /* ActionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C894DF41D6C18C200E1CF12 /* ActionTableViewController.swift */; };
 		1CAC3B671D6D739400B03E68 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC3B661D6D739400B03E68 /* AddTableViewController.swift */; };
@@ -72,7 +68,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C4A0B2A1D37253B0046BC32 /* PilotPlant.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,8 +91,6 @@
 		1C4A0B131D37251F0046BC32 /* DewDateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DewDateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4A0B171D37251F0046BC32 /* DewDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewDateUITests.swift; sourceTree = "<group>"; };
 		1C4A0B191D37251F0046BC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C4A0B251D3725280046BC32 /* PilotPlant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PilotPlant.framework; path = DewDate/PilotPlant.framework; sourceTree = "<group>"; };
-		1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1C4A0B2F1D37269A0046BC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C894DF41D6C18C200E1CF12 /* ActionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTableViewController.swift; sourceTree = "<group>"; };
 		1CAC3B661D6D739400B03E68 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C4A0B271D3725280046BC32 /* PilotPlant.framework in Frameworks */,
-				1C4A0B291D37253B0046BC32 /* PilotPlant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +146,6 @@
 		1C4A0AE81D37251F0046BC32 = {
 			isa = PBXGroup;
 			children = (
-				1C4A0B251D3725280046BC32 /* PilotPlant.framework */,
 				1C4A0AF31D37251F0046BC32 /* DewDate */,
 				1C4A0B0B1D37251F0046BC32 /* DewDateTests */,
 				1C4A0B161D37251F0046BC32 /* DewDateUITests */,
@@ -178,7 +168,6 @@
 		1C4A0AF31D37251F0046BC32 /* DewDate */ = {
 			isa = PBXGroup;
 			children = (
-				1C4A0B261D3725280046BC32 /* UIViewController+Navigation.swift */,
 				1CBF44501D5AE9620042068F /* Classes.swift */,
 				1C4A0AF41D37251F0046BC32 /* AppDelegate.swift */,
 				1C4A0AFE1D37251F0046BC32 /* Assets.xcassets */,
@@ -387,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DB38C1D1D657B0C00F365B1 /* EventTableViewCell.swift in Sources */,
-				1C4A0B281D3725280046BC32 /* UIViewController+Navigation.swift in Sources */,
 				1C4A0AF71D37251F0046BC32 /* ViewController.swift in Sources */,
 				3D890D0A1D66A1DD00EB57CA /* EventDetailTableViewController.swift in Sources */,
 				1CBF44511D5AE9620042068F /* Classes.swift in Sources */,
@@ -533,6 +521,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -571,6 +560,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
