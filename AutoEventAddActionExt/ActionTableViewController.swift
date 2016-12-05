@@ -11,80 +11,80 @@ import MobileCoreServices
 import EventKit
 
 extension String {
-    public func indexOfCharacter(char: Character) -> Int? {
-        if let idx = self.characters.indexOf(char) {
-            return self.startIndex.distanceTo(idx)
+    public func indexOfCharacter(_ char: Character) -> Int? {
+        if let idx = self.characters.index(of: char) {
+            return self.characters.distance(from: self.startIndex, to: idx)
         }
         return nil
     }
     
-    func toDateTime(dateFormatter:NSDateFormatter) -> NSDate
+    func toDateTime(_ dateFormatter:DateFormatter) -> Date
     {
         //Parse into NSDate
-        let dateFromString : NSDate = dateFormatter.dateFromString(self)!
+        let dateFromString : Date = dateFormatter.date(from: self)!
         
         //Return Parsed Date
         return dateFromString
     }
 }
 
-extension NSDate
+extension Date
 {
     func year() -> Int
     {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Year, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.year, from: self)
         let year = components.year
         
-        return year
+        return year!
     }
     
     func month() -> Int
     {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Month, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.month, from: self)
         let month = components.month
         
-        return month
+        return month!
     }
     
     func day() -> Int
     {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Day, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.day, from: self)
         let day = components.day
         
-        return day
+        return day!
     }
     
     func hour() -> Int
     {
         //Get Hour
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Hour, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.hour, from: self)
         let hour = components.hour
         
         //Return Hour
-        return hour
+        return hour!
     }
     
     
     func minute() -> Int
     {
         //Get Minute
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Minute, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.minute, from: self)
         let minute = components.minute
         
         //Return Minute
-        return minute
+        return minute!
     }
     
-    func toTimeString(formatter:NSDateFormatter) -> String
+    func toTimeString(_ formatter:DateFormatter) -> String
     {
         //Get Time String
 
-        let timeString = formatter.stringFromDate(self)
+        let timeString = formatter.string(from: self)
         
         //Return Time String
         return timeString
@@ -92,24 +92,24 @@ extension NSDate
     
 }
 
-let spaceSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+let spaceSet = CharacterSet.whitespacesAndNewlines
 
 class ActionTableViewController: UITableViewController {
     var convertingString: String?
-    let cal = NSCalendar.currentCalendar()
+    let cal = Calendar.current
     
     var eventTitle:String = ""
     var eventLocation = ""
     var eventIsAllDay = false
-    var eventStart:NSDate = NSDate()
-    var eventEnd:NSDate = NSDate()
+    var eventStart:Date = Date()
+    var eventEnd:Date = Date()
     //var eventRepeat:EKRecurrenceRule? = nil
     //var eventAlarm:EKAlarm? = nil
-    var eventURL:NSURL = NSURL()
+    var eventURL:URL = NSURLComponents().url!
     var eventMemo = ""
     
     //Create Date Formatter
-    var dateFormatter = NSDateFormatter()
+    var dateFormatter = DateFormatter()
 
 
     @IBOutlet weak var titleTextField: UITextField!
@@ -121,17 +121,17 @@ class ActionTableViewController: UITableViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextView!
     
-    @IBAction func addButton(sender: AnyObject) {
+    @IBAction func addButton(_ sender: AnyObject) {
         let eventStore = EKEventStore()
         if let newEventTitle = self.titleTextField.text { self.eventTitle =  newEventTitle }
         if let newEventLocation = self.locationTextField.text { self.eventLocation = newEventLocation }
         if let newEventStart = self.startLabel.text?.toDateTime(self.dateFormatter) { self.eventStart = newEventStart }
         if let newEventEnd = self.endLabel.text?.toDateTime(self.dateFormatter) { self.eventEnd = newEventEnd }
-        if let newEventURL = NSURL(string: self.urlTextField.text!) { self.eventURL = newEventURL }
+        if let newEventURL = URL(string: self.urlTextField.text!) { self.eventURL = newEventURL }
         if let newEventMemo = self.memoTextField.text { self.eventMemo = newEventMemo }
         
-        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-            eventStore.requestAccessToEntityType(.Event, completion: {
+        if (EKEventStore.authorizationStatus(for: .event) != EKAuthorizationStatus.authorized) {
+            eventStore.requestAccess(to: .event, completion: {
                 granted, error in
                 if granted {
                     self.createEvent(eventStore)
@@ -146,7 +146,7 @@ class ActionTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func cancelButton(sender: AnyObject) {
+    @IBAction func cancelButton(_ sender: AnyObject) {
         // 이 함수는 입력 아이템을 unpacking하는 과정을 반대로 한다. 첫번째로 수정된 컨텐츠(convertedString)와 컨텐츠 타입 식별자(여기서는 kUTTypeText)로 구성한 새로운 NSItemProvider인스턴스를 생성한다.
         //let returnProvider = NSItemProvider(item:convertingString, typeIdentifier: kUTTypeText as NSString as String)
         // 새로운 NSExtensionItem인스턴스를 생성하고 NSItemProvider 객체를 attachments에 할당한다.(호스트 앱으로 다시 전달하기 위하여 갱신된 정보를 저장)
@@ -155,39 +155,39 @@ class ActionTableViewController: UITableViewController {
         
         // 익스텐션 콘텍스트의 completeRequestReturningItems 메서드에 NSExtensionItem 인스턴스를 인자로 전달하며 호출
         //extensionContext!.completeRequestReturningItems([returnItem], completionHandler: nil)
-        self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
     
-    @IBAction func isAllDaySwitch(sender: AnyObject) {
+    @IBAction func isAllDaySwitch(_ sender: AnyObject) {
         let allDaySwitch = sender as! UISwitch
-        let allDayBool:Bool = allDaySwitch.on
+        let allDayBool:Bool = allDaySwitch.isOn
         self.eventIsAllDay = allDayBool
         if eventIsAllDay {
             //Specify Format of String to Parsez
             self.dateFormatter.dateFormat = "yyyy-MM-dd"
-            self.startDatePickerValue.datePickerMode = UIDatePickerMode.Date
-            self.endDatePickerValue.datePickerMode = UIDatePickerMode.Date
+            self.startDatePickerValue.datePickerMode = UIDatePickerMode.date
+            self.endDatePickerValue.datePickerMode = UIDatePickerMode.date
             self.startLabel.text = self.eventStart.toTimeString(self.dateFormatter)
             self.endLabel.text = self.eventEnd.toTimeString(self.dateFormatter)
         } else {
             //Specify Format of String to Parsez
             self.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-            self.startDatePickerValue.datePickerMode = UIDatePickerMode.DateAndTime
-            self.endDatePickerValue.datePickerMode = UIDatePickerMode.DateAndTime
+            self.startDatePickerValue.datePickerMode = UIDatePickerMode.dateAndTime
+            self.endDatePickerValue.datePickerMode = UIDatePickerMode.dateAndTime
             self.startLabel.text = self.eventStart.toTimeString(self.dateFormatter)
             self.endLabel.text = self.eventEnd.toTimeString(self.dateFormatter)
         }
     }
     
     @IBOutlet weak var startDatePickerValue: UIDatePicker!
-    @IBAction func startDatePicker(sender: AnyObject) {
+    @IBAction func startDatePicker(_ sender: AnyObject) {
         //self.endCheck()
         self.eventStart = startDatePickerValue.date
         self.startLabel.text = eventStart.toTimeString(self.dateFormatter)
     }
     
     @IBOutlet weak var endDatePickerValue: UIDatePicker!
-    @IBAction func endDatePicker(sender: AnyObject) {
+    @IBAction func endDatePicker(_ sender: AnyObject) {
         //self.endCheck()
         self.eventEnd = endDatePickerValue.date
         self.endLabel.text = eventEnd.toTimeString(self.dateFormatter)
@@ -223,11 +223,11 @@ class ActionTableViewController: UITableViewController {
                 var endFlag = false
                 var memoFlag = false
                 
-                let lines = parsingString.componentsSeparatedByString("\n")
+                let lines = parsingString.components(separatedBy: "\n")
                 for line in lines {
                     if line != "" {
-                        let front = line.substringToIndex(line.startIndex.advancedBy(2))
-                        let back = line.substringFromIndex(line.startIndex.advancedBy(3))
+                        let front = line.substring(to: line.characters.index(line.startIndex, offsetBy: 2))
+                        let back = line.substring(from: line.characters.index(line.startIndex, offsetBy: 3))
                         switch front {
                         case "제목" :
                             titleFlag = true
@@ -249,14 +249,14 @@ class ActionTableViewController: UITableViewController {
                             continue
                         }
                         if endFlag == false {
-                            self.eventEnd = self.cal.dateByAddingUnit(.NSHourCalendarUnit, value: 2, toDate: self.eventStart, options: .WrapComponents)!
+                            self.eventEnd = (self.cal as NSCalendar).date(byAdding: .NSHourCalendarUnit, value: 2, to: self.eventStart, options: .wrapComponents)!
                         }
                     }
                     self.eventMemo += line + "\n"
                 }
                 
                 // 메인스레드를 통하여 화면의 TextView에 갱신처리
-                dispatch_async(dispatch_get_main_queue()){
+                DispatchQueue.main.async{
                     self.titleTextField.text = self.eventTitle
                     self.locationTextField.text = self.eventLocation
                     self.startLabel.text = self.eventStart.toTimeString(self.dateFormatter)
@@ -267,12 +267,12 @@ class ActionTableViewController: UITableViewController {
         }
         // 호스트 앱이 원하고자 하는 타입의 데이터를 가지고 있다면 익스텐션이 지원하는 UTI 컨텐츠 타입인자로 다시 전달되는 loadItemForTypeIdentifier 메서드 호출을 통하여 그 데이터가 익스텐션에 로드될수 있다. 호스트앱의 데이터를 로딩하는 것은 비동기적으로 수행하므로 데이터 로딩 과정이 완료될때 호출되는 완료 핸들러를 지정해야 한다.
         if textItemProvider.hasItemConformingToTypeIdentifier(kUTTypeText as NSString as String) {
-            textItemProvider.loadItemForTypeIdentifier(
-                kUTTypeText as String,      // 텍스트 타입의 데이터를 수신할 것으로 지정
+            textItemProvider.loadItem(
+                forTypeIdentifier: kUTTypeText as String,      // 텍스트 타입의 데이터를 수신할 것으로 지정
                 options: nil,
                 // viewDidLoad에 선언한 handlerCompletion 변수를 통하여 핸들러를 지정하여 처리하도록 전달한다.
                 // Swift 2.0에서는 unsafeBitCast함수를 이용하도록 변경되었다.
-                completionHandler: unsafeBitCast(handlerCompletion, NSItemProviderCompletionHandler.self)
+                completionHandler: unsafeBitCast(handlerCompletion, to: NSItemProvider.CompletionHandler.self)
             )
         }
     }
@@ -284,12 +284,12 @@ class ActionTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
@@ -362,20 +362,20 @@ class ActionTableViewController: UITableViewController {
     var StartPickerRowHeight:CGFloat = 0.0
     var EndPickerRowHeight:CGFloat = 0.0
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
-        case NSIndexPath(forRow: 1, inSection: 1):
+        case IndexPath(row: 1, section: 1):
             startDatePickerValue.setDate(self.eventStart, animated: false)
             if StartPickerRowHeight < 100 { StartPickerRowHeight = 210.0 }
             else { StartPickerRowHeight = 0.0 }
             self.tableView.reloadData()
-        case NSIndexPath(forRow: 3, inSection: 1):
+        case IndexPath(row: 3, section: 1):
             endDatePickerValue.setDate(self.eventEnd, animated: false)
             if EndPickerRowHeight < 100 { EndPickerRowHeight = 210.0 }
             else { EndPickerRowHeight = 0.0 }
             self.tableView.reloadData()
         default:
-            if indexPath != NSIndexPath(forRow: 2, inSection: 1) && indexPath != NSIndexPath(forRow: 4, inSection: 1) {
+            if indexPath != IndexPath(row: 2, section: 1) && indexPath != IndexPath(row: 4, section: 1) {
                 StartPickerRowHeight = 0.0
                 EndPickerRowHeight = 0.0
                 self.tableView.reloadData()
@@ -383,14 +383,14 @@ class ActionTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         switch indexPath {
-        case NSIndexPath(forRow: 2, inSection: 1):
+        case IndexPath(row: 2, section: 1):
             return StartPickerRowHeight
-        case NSIndexPath(forRow: 4, inSection: 1):
+        case IndexPath(row: 4, section: 1):
             return EndPickerRowHeight
-        case NSIndexPath(forRow: 1, inSection: 2):
+        case IndexPath(row: 1, section: 2):
             return 150.0
         default:
             return 44.0
@@ -400,15 +400,15 @@ class ActionTableViewController: UITableViewController {
     
     // Creates an event in the EKEventStore. The method assumes the eventStore is created and
     // accessible
-    func createEvent(eventStore: EKEventStore) {
+    func createEvent(_ eventStore: EKEventStore) {
         let event = EKEvent(eventStore: eventStore)
         event.title = self.eventTitle
-        event.allDay = self.eventIsAllDay
+        event.isAllDay = self.eventIsAllDay
         event.startDate = self.eventStart
         event.endDate = self.eventEnd
         event.location = self.eventLocation
         event.notes = self.eventMemo
-        event.URL = self.eventURL
+        event.url = self.eventURL
         /*
         if let alarm = self.eventAlarm {
             event.alarms = [alarm]
@@ -417,7 +417,7 @@ class ActionTableViewController: UITableViewController {
         event.calendar = eventStore.defaultCalendarForNewEvents
         
         do {
-            try eventStore.saveEvent(event, span: .ThisEvent)
+            try eventStore.save(event, span: .thisEvent)
         } catch {
             print("Bad things happened creating evnet")
         }
@@ -425,7 +425,7 @@ class ActionTableViewController: UITableViewController {
     
     func doneAlert() {
         // show adding has done as actionSheet
-        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .ActionSheet)
+        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정이 캘린더에 추가되었습니다.", message: nil, preferredStyle: .actionSheet)
         /*  // only today wiget open its containing app
          let moveToCalAction = UIAlertAction(title: "DewDate로 이동", style: .Default, handler: { (action:UIAlertAction) -> Void in
          print ("캘린더로 이동 선택")
@@ -434,24 +434,24 @@ class ActionTableViewController: UITableViewController {
          
          })
          */
-        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+        let exitAction = UIAlertAction(title: "종료", style: .cancel, handler: { (action:UIAlertAction) -> Void in
             print ("종료 선택")
-            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)})
+            self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)})
         //addAlert.addAction(moveToCalAction)
         addAlert.addAction(exitAction)
-        self.presentViewController(addAlert, animated: true, completion: nil)
+        self.present(addAlert, animated: true, completion: nil)
     }
     
     func failAlert() {
-        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정을 저장할 수 없습니다. DewDate가 캘린더에 접근할 수 있도록 허가해 주세요", message: nil, preferredStyle: .ActionSheet)
-        let exitAction = UIAlertAction(title: "종료", style: .Cancel, handler: { (action:UIAlertAction) -> Void in
+        let addAlert = UIAlertController(title: "\(self.eventTitle) 일정을 저장할 수 없습니다. DewDate가 캘린더에 접근할 수 있도록 허가해 주세요", message: nil, preferredStyle: .actionSheet)
+        let exitAction = UIAlertAction(title: "종료", style: .cancel, handler: { (action:UIAlertAction) -> Void in
             print ("종료 선택")
-            self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)})
+            self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)})
         addAlert.addAction(exitAction)
-        self.presentViewController(addAlert, animated: true, completion: nil)
+        self.present(addAlert, animated: true, completion: nil)
     }
     
-    func parsDate(back:String)->String {
+    func parsDate(_ back:String)->String {
         var rest = back
         let year:Int
         let month:Int
@@ -460,32 +460,32 @@ class ActionTableViewController: UITableViewController {
         let minute:Int
         
         // parsiing year
-        if let intIndex = rest.indexOfCharacter("년"), let yearFromStirng = Int(rest.substringToIndex(rest.startIndex.advancedBy(intIndex))) {
+        if let intIndex = rest.indexOfCharacter("년"), let yearFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
             year = yearFromStirng
-            rest = rest.substringFromIndex(rest.startIndex.advancedBy(intIndex+1)).stringByTrimmingCharactersInSet( spaceSet )
+            rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
         } else {
-            year = NSDate().year()
+            year = Date().year()
         }
         // parsing month
-        if let intIndex = rest.indexOfCharacter("월"), let monthFromStirng = Int(rest.substringToIndex(rest.startIndex.advancedBy(intIndex))) {
+        if let intIndex = rest.indexOfCharacter("월"), let monthFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
             month = monthFromStirng
-            rest = rest.substringFromIndex(rest.startIndex.advancedBy(intIndex+1)).stringByTrimmingCharactersInSet( spaceSet )
+            rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
         } else {
-            month = NSDate().month()
+            month = Date().month()
         }
         // parsing day
-        if let intIndex = rest.indexOfCharacter("일"), let dayFromStirng = Int(rest.substringToIndex(rest.startIndex.advancedBy(intIndex))) {
+        if let intIndex = rest.indexOfCharacter("일"), let dayFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
             day = dayFromStirng
-            rest = rest.substringFromIndex(rest.startIndex.advancedBy(intIndex+1)).stringByTrimmingCharactersInSet( spaceSet )
+            rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
         } else {
-            day = NSDate().day()
+            day = Date().day()
         }
         // parsing hour
-        if let intIndex = rest.indexOfCharacter(":"), let hourFromStirng = Int(rest.substringToIndex(rest.startIndex.advancedBy(intIndex))) {
+        if let intIndex = rest.indexOfCharacter(":"), let hourFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
             hour = hourFromStirng
-            rest = rest.substringFromIndex(rest.startIndex.advancedBy(intIndex+1)).stringByTrimmingCharactersInSet( spaceSet )
+            rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
         } else {
-            hour = NSDate().hour()
+            hour = Date().hour()
         }
         // parsing minute
         if let minuteFromString = Int(rest) {

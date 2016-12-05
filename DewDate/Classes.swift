@@ -110,13 +110,13 @@ class Event{
     var title:String
     var location:String
     var isAllDay:Bool
-    var startDate:NSDate
-    var endDate:NSDate
+    var startDate:Date
+    var endDate:Date
     var eventIdentifier:String
-    var url:NSURL
+    var url:URL
     var memo:String
     
-    init(title:String,location:String, isAllDay:Bool, startDate:NSDate,endDate:NSDate, eventIdentifier:String, url:NSURL, memo:String){
+    init(title:String,location:String, isAllDay:Bool, startDate:Date,endDate:Date, eventIdentifier:String, url:URL, memo:String){
         self.eventIdentifier = eventIdentifier
         self.title = title
         self.isAllDay = isAllDay
@@ -133,16 +133,16 @@ class Event{
         self.title = ""
         self.isAllDay = false
         self.location = ""
-        self.startDate = NSDate()
-        self.endDate = NSDate()
-        self.url = NSURL(string: "")!
+        self.startDate = Date()
+        self.endDate = Date()
+        self.url = NSURLComponents().url!
         self.memo = ""
         
     }
     
     func arrOfAddInfo()->Array<(String, String)> {
         var arr:Array<(String, String)> = []
-        if self.url != NSURL(string: "")!  { arr.append( ("url", "\(self.url)") ) }
+        if self.url != NSURLComponents().url!  { arr.append( ("url", "\(self.url)") ) }
         if self.memo != "" { arr.append( ("memo", "\(self.memo)") ) }
         return arr
     }

@@ -85,26 +85,26 @@ class EventDetailTableViewController: UITableViewController{
 //        }
     
 
-    func deleteEvent(eventStore: EKEventStore, eventIdentifier: String) {
-        let eventToRemove = eventStore.eventWithIdentifier(eventIdentifier)
+    func deleteEvent(_ eventStore: EKEventStore, eventIdentifier: String) {
+        let eventToRemove = eventStore.event(withIdentifier: eventIdentifier)
         if (eventToRemove != nil) {
             do {
-                try eventStore.removeEvent(eventToRemove!, span: .ThisEvent)
+                try eventStore.remove(eventToRemove!, span: .thisEvent)
             } catch {
                 print("Bad things happened")
             }
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     var currentEvent:Event = Event()
     var arrOfAddInfo:Array<(String, String)> = []
 
-    @IBAction func deleteEvent(sender: AnyObject) {
+    @IBAction func deleteEvent(_ sender: AnyObject) {
         let eventStore = EKEventStore()
         
-        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-            eventStore.requestAccessToEntityType(.Event, completion: { (granted, error) -> Void in
+        if (EKEventStore.authorizationStatus(for: .event) != EKAuthorizationStatus.authorized) {
+            eventStore.requestAccess(to: .event, completion: { (granted, error) -> Void in
                 self.deleteEvent(eventStore, eventIdentifier: self.currentEvent.eventIdentifier)
             })
         } else {
@@ -124,17 +124,17 @@ class EventDetailTableViewController: UITableViewController{
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
 
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (currentEvent.arrOfAddInfo().count + 1)
 
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.row == 0{
             return 90.0;
@@ -145,14 +145,14 @@ class EventDetailTableViewController: UITableViewController{
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             //let cell: TopEventDetailTableViewCell = TopEventDetailTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TopEventDetailTableViewCell")
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("TopEventDetailTableViewCell", forIndexPath: indexPath) as! TopEventDetailTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopEventDetailTableViewCell", for: indexPath) as! TopEventDetailTableViewCell
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             let locationString:String
             
             if currentEvent.location == "" {
@@ -178,10 +178,10 @@ class EventDetailTableViewController: UITableViewController{
             cell.another_title.text = currentEvent.title
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("EventDetailCell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EventDetailCell", for: indexPath)
             cell.textLabel!.text = self.arrOfAddInfo[0].0
             cell.detailTextLabel!.text = self.arrOfAddInfo[0].1
-            self.arrOfAddInfo.removeAtIndex(0)
+            self.arrOfAddInfo.remove(at: 0)
             
             return cell
         }

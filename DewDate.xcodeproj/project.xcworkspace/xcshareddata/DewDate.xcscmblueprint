@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "44DE7F8E7FDE875845DA469806C8A1AE7F37A77A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "44DE7F8E7FDE875845DA469806C8A1AE7F37A77A" : 9223372036854775807,
+    "8E582E62FAFB19B146D1569C431860EC18ABFCA1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "60B51204-ADF1-43C7-8BC9-017D7CBD08E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "44DE7F8E7FDE875845DA469806C8A1AE7F37A77A" : "DewDate\/",
+    "8E582E62FAFB19B146D1569C431860EC18ABFCA1" : "FSCalendar\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DewDate",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DewDate.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/norary3\/DewDate.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "44DE7F8E7FDE875845DA469806C8A1AE7F37A77A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WenchaoD\/FSCalendar",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8E582E62FAFB19B146D1569C431860EC18ABFCA1"
+    }
+  ]
+}
