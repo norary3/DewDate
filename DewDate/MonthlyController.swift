@@ -59,21 +59,9 @@ class MonthlyViewController:UIViewController, FSCalendarDataSource, FSCalendarDe
      */
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        var events: [EKEvent]?
-        //dateFormatter.dateFormat = "yyyy-MM-dd"
-        // Create start and end date NSDate instances to build a predicate for which events to select
         let startDate = date
         let endDate = date.addingTimeInterval(60*60*24*1)
-        
-        // Use an event store instance to create and properly configure an NSPredicate
-        let eventsPredicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: eventStore.calendars(for: .event))
-        
-        // Use the configured NSPredicate to find and return events in the store that match
-        events = eventStore.events(matching: eventsPredicate).sorted(){
-            (e1: EKEvent, e2: EKEvent) -> Bool in
-            return e1.startDate.compare(e2.startDate) == ComparisonResult.orderedAscending
-        }
-        
+        let events = readEvents(startDate : startDate, endDate: endDate)
         return (events?.count)!
     }
     
@@ -91,7 +79,7 @@ class MonthlyViewController:UIViewController, FSCalendarDataSource, FSCalendarDe
             calendar.setCurrentPage(date, animated: true)
         }
         calendar.setScope(.week, animated: true)
-        
+    
     }
     
     // FSCalendarDataSource

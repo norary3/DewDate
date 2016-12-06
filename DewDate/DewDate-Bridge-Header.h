@@ -7,5 +7,6 @@
 #define DewDate_Objc_Bridge_Header_h
 
 #import "FSCalendar.h"
+#import "MSCollectionViewCalendarLayout.h"
 
 #endif

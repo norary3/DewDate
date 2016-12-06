@@ -47,3 +47,20 @@ func readEvents() {
     })
     //print("myEvents.count: \(myEvents.count)")
 }
+
+
+func readEvents(startDate: Date, endDate: Date) -> [EKEvent]? {
+    var events: [EKEvent]?
+    //dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    // Use an event store instance to create and properly configure an NSPredicate
+    let eventsPredicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: eventStore.calendars(for: .event))
+    
+    // Use the configured NSPredicate to find and return events in the store that match
+    events = eventStore.events(matching: eventsPredicate).sorted(){
+        (e1: EKEvent, e2: EKEvent) -> Bool in
+        return e1.startDate.compare(e2.startDate) == ComparisonResult.orderedAscending
+    }
+    
+    return events
+}
