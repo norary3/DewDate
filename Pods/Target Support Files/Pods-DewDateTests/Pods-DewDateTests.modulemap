@@ -1,0 +1,6 @@
+framework module Pods_DewDateTests {
+  umbrella header "Pods-DewDateTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
