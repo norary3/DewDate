@@ -1,0 +1,999 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B23FBCD7F984ECEDFFCADF59FF9CC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		1A4E7AD5A8871AE1FD8D5006EF2F1273 /* MSCollectionViewCalendarLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5A8B1D578C243A4244772DB23BF77B /* MSCollectionViewCalendarLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26022FA0686EC59982D1224A904F69AD /* Pods-DewDateUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F0444E376DAD12ED36826ED928E52A /* Pods-DewDateUITests-dummy.m */; };
+		354AB2007F5FAC9AEB24E02840A028D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		38E67CFC63E2795846C208CD9CC6DD8D /* MSCollectionViewCalendarLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 133CED182B00956ED2C297D59E99CE12 /* MSCollectionViewCalendarLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45030238640BAEC178325B0A08D21DB6 /* Pods-DewDate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6239A0E67F673989E94589B85006CE /* Pods-DewDate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62B1AE7891695367557D640BE67E01EA /* Pods-DewDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66909C3C086F7DCA85EE5EE082C7C9B0 /* Pods-DewDate-dummy.m */; };
+		6433685764A2041C74ECAFD174BAC739 /* Pods-AutoEventAddActionExt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43B53D68736E8045A118B33AF9353AE2 /* Pods-AutoEventAddActionExt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		912C386A7F30C7892276086A94BCA425 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		959C3E08576DF8CD6AB2919CBD83EDFB /* Pods-DewDateUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47D22EA4532EEC72AE2051CCDB12FC61 /* Pods-DewDateUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97BB23FA9C5B781E33048F84A4549309 /* MSCollectionViewCalendarLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C792ABFCB6425A88AFF4CA219F9ED4D5 /* MSCollectionViewCalendarLayout-dummy.m */; };
+		AAB2A6BA96AE0E60CC0DBBB1446EDDF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B5298D4AA7B8A7B0BB8D433FE62D7B55 /* Pods-DewDateTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A71175107C4885C23F3B11056B76EBA2 /* Pods-DewDateTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F71DA5209D51B4D687F5222CAF34A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		E1391A7CA811E16A9235A6718AE9C41C /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC941FABCF2C26B864791DA4F9DD7BBB /* MSCollectionViewCalendarLayout.m */; };
+		E3864E5AA02F25A1C4096F5B0B174C20 /* Pods-DewDateTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C6619440ABB8A39BDECCFD37F0AFB4 /* Pods-DewDateTests-dummy.m */; };
+		F0D3A2DB5DF61F736B82C0D7BCEC46C1 /* Pods-AutoEventAddActionExt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 665DC2688081F48907EA0F8A6F9F3D07 /* Pods-AutoEventAddActionExt-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D125C94FD8D2B1762022275EDE4E6DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35DBF5EF033CB1AFD40BF50025A2838E;
+			remoteInfo = MSCollectionViewCalendarLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02FBF7F5125E7EAD7EF64A7087E58BDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C42C44FAF176002DCD29A56BEDA5B5 /* Pods_DewDateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DewDateTests.framework; path = "Pods-DewDateTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		093B87DE43F8A3254FCF59CA1F64A292 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C3A74A3F525277CA34011A4FF7EAA9 /* Pods-AutoEventAddActionExt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AutoEventAddActionExt.modulemap"; sourceTree = "<group>"; };
+		1265123882C668CBD56710D9E1C00AAF /* Pods-DewDate-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DewDate-acknowledgements.plist"; sourceTree = "<group>"; };
+		133CED182B00956ED2C297D59E99CE12 /* MSCollectionViewCalendarLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSCollectionViewCalendarLayout-umbrella.h"; sourceTree = "<group>"; };
+		17666AA05D86C4F4EA7248293F5372C9 /* Pods-DewDateTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DewDateTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1C4479A749D2BFFA8F6495EE5ED938A5 /* MSCollectionViewCalendarLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSCollectionViewCalendarLayout.xcconfig; sourceTree = "<group>"; };
+		23C9FACD364E119D07D5DD71708ADD76 /* Pods-AutoEventAddActionExt-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AutoEventAddActionExt-acknowledgements.plist"; sourceTree = "<group>"; };
+		23CBEBA029ACD7CA928F31BF186CA7CC /* Pods-DewDateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDateTests.release.xcconfig"; sourceTree = "<group>"; };
+		2817CFFB0B0BE5BD59CD8CB87F42B3CF /* Pods-DewDateUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DewDateUITests.modulemap"; sourceTree = "<group>"; };
+		35D13B2ECE2E9BB087A1F3DAE2CDFBA6 /* Pods-DewDateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37665C10E9D69A7BA39E5E32538B05B3 /* Pods-AutoEventAddActionExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoEventAddActionExt.release.xcconfig"; sourceTree = "<group>"; };
+		3C6239A0E67F673989E94589B85006CE /* Pods-DewDate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DewDate-umbrella.h"; sourceTree = "<group>"; };
+		3E300CDDA5F6FC06FAD22A603604EECC /* Pods-DewDateUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDateUITests-resources.sh"; sourceTree = "<group>"; };
+		4336FA5422B3C87EC5FEEF4C5DCC5C26 /* Pods-DewDateTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDateTests-frameworks.sh"; sourceTree = "<group>"; };
+		43B53D68736E8045A118B33AF9353AE2 /* Pods-AutoEventAddActionExt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutoEventAddActionExt-umbrella.h"; sourceTree = "<group>"; };
+		47D22EA4532EEC72AE2051CCDB12FC61 /* Pods-DewDateUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DewDateUITests-umbrella.h"; sourceTree = "<group>"; };
+		4859A6307F2C031841B7F052AA1D6BFD /* Pods-DewDate-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDate-resources.sh"; sourceTree = "<group>"; };
+		55694E6755FAE1368990E7EE107CEC09 /* Pods-DewDate-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDate-frameworks.sh"; sourceTree = "<group>"; };
+		5E165360D3265A209DFAEE545AF1B416 /* Pods-DewDateTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DewDateTests.modulemap"; sourceTree = "<group>"; };
+		5F5A8B1D578C243A4244772DB23BF77B /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
+		6034CF6C349410DA8B5420917062AF99 /* Pods-DewDateUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDateUITests-frameworks.sh"; sourceTree = "<group>"; };
+		665DC2688081F48907EA0F8A6F9F3D07 /* Pods-AutoEventAddActionExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutoEventAddActionExt-dummy.m"; sourceTree = "<group>"; };
+		66909C3C086F7DCA85EE5EE082C7C9B0 /* Pods-DewDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DewDate-dummy.m"; sourceTree = "<group>"; };
+		6C790406EB1A5D7C15BF7758BE4AD905 /* Pods_DewDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DewDate.framework; path = "Pods-DewDate.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCF6317C6CD97D4EF9632D9A2C65358 /* Pods-DewDate-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DewDate-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7079D96E03DAC3AB9CA20080C58C14C5 /* Pods-DewDateUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DewDateUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		70BB31BA1FD7E1C7D0ED2AD00E52ED47 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72A049D938C4B832B855690F0EAEC469 /* Pods-AutoEventAddActionExt-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutoEventAddActionExt-resources.sh"; sourceTree = "<group>"; };
+		7BE1E5CB426C0F90FFB42761CD75687A /* MSCollectionViewCalendarLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSCollectionViewCalendarLayout-prefix.pch"; sourceTree = "<group>"; };
+		7DAA2B37A107B19116E4DCF84B2182CC /* Pods-DewDateTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DewDateTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7ED7F06BF58EA3D1DCB388249C074A7B /* Pods-DewDate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDate.debug.xcconfig"; sourceTree = "<group>"; };
+		8B6F5D14C333940856B5405F62AF31A8 /* Pods-AutoEventAddActionExt-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AutoEventAddActionExt-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8D5F7CCFF86340F85BE8D0D844CD8E68 /* Pods-DewDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDate.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93C6619440ABB8A39BDECCFD37F0AFB4 /* Pods-DewDateTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DewDateTests-dummy.m"; sourceTree = "<group>"; };
+		940E085B39CD0CB93F5A9C72A9132354 /* Pods-DewDateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A71175107C4885C23F3B11056B76EBA2 /* Pods-DewDateTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DewDateTests-umbrella.h"; sourceTree = "<group>"; };
+		AFE7BF71BFA0A760A653650A6FCE3BDE /* Pods_DewDateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DewDateUITests.framework; path = "Pods-DewDateUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA4939EE6936815C7930397C1F0AC27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C792ABFCB6425A88AFF4CA219F9ED4D5 /* MSCollectionViewCalendarLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSCollectionViewCalendarLayout-dummy.m"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CE1DA80540712A0AE20378A080B1EEDE /* Pods-AutoEventAddActionExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutoEventAddActionExt.debug.xcconfig"; sourceTree = "<group>"; };
+		D6489FA1EA13106C00C28E271AD5CEAC /* MSCollectionViewCalendarLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MSCollectionViewCalendarLayout.modulemap; sourceTree = "<group>"; };
+		DA7A02EDFAEA415A86E748851AA09FA4 /* Pods-DewDateTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DewDateTests-resources.sh"; sourceTree = "<group>"; };
+		F19646E6D4FC994164560B08BDF76C6D /* Pods-DewDateUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DewDateUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2823F698C125E28D9664EFBEA775134 /* Pods-DewDateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DewDateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F4C78430ABC13DBF848237F8245BCE94 /* MSCollectionViewCalendarLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MSCollectionViewCalendarLayout.framework; path = MSCollectionViewCalendarLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7F0444E376DAD12ED36826ED928E52A /* Pods-DewDateUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DewDateUITests-dummy.m"; sourceTree = "<group>"; };
+		FC216F61795155976F059C9B486654A5 /* Pods_AutoEventAddActionExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AutoEventAddActionExt.framework; path = "Pods-AutoEventAddActionExt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC941FABCF2C26B864791DA4F9DD7BBB /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
+		FE3699DF17E9BBD7695C2CBA93B6D8E0 /* Pods-DewDate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DewDate.modulemap"; sourceTree = "<group>"; };
+		FE9CC4625AEB3A3DE85537F93ECEB9C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38F9D567A1F40E5E5E6FF1DFA865ECC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912C386A7F30C7892276086A94BCA425 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BCB625A91445CF80FE9A0AB3E75E973 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B23FBCD7F984ECEDFFCADF59FF9CC2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C4E49B0E600814B707D0DC8AB41C316 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354AB2007F5FAC9AEB24E02840A028D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8F3483EAD2DF4770A390AB34A309FEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F71DA5209D51B4D687F5222CAF34A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC29660EEB30FE4A51BEA1A99FA6BE99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB2A6BA96AE0E60CC0DBBB1446EDDF1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FB2AFFBD4F9E39F7D5F9184B1B27B95 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2F29DE5235518B4B9C949FEB74F6B77 /* Pods-AutoEventAddActionExt */,
+				2C5879FB88DA666A6B1C777757C18D92 /* Pods-DewDate */,
+				E49D1FAE37D45DD534BB98E1CE283132 /* Pods-DewDateTests */,
+				E125AE78D4EA22F39D44D3BD0C174F54 /* Pods-DewDateUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2C5879FB88DA666A6B1C777757C18D92 /* Pods-DewDate */ = {
+			isa = PBXGroup;
+			children = (
+				BAA4939EE6936815C7930397C1F0AC27 /* Info.plist */,
+				FE3699DF17E9BBD7695C2CBA93B6D8E0 /* Pods-DewDate.modulemap */,
+				6CCF6317C6CD97D4EF9632D9A2C65358 /* Pods-DewDate-acknowledgements.markdown */,
+				1265123882C668CBD56710D9E1C00AAF /* Pods-DewDate-acknowledgements.plist */,
+				66909C3C086F7DCA85EE5EE082C7C9B0 /* Pods-DewDate-dummy.m */,
+				55694E6755FAE1368990E7EE107CEC09 /* Pods-DewDate-frameworks.sh */,
+				4859A6307F2C031841B7F052AA1D6BFD /* Pods-DewDate-resources.sh */,
+				3C6239A0E67F673989E94589B85006CE /* Pods-DewDate-umbrella.h */,
+				7ED7F06BF58EA3D1DCB388249C074A7B /* Pods-DewDate.debug.xcconfig */,
+				8D5F7CCFF86340F85BE8D0D844CD8E68 /* Pods-DewDate.release.xcconfig */,
+			);
+			name = "Pods-DewDate";
+			path = "Target Support Files/Pods-DewDate";
+			sourceTree = "<group>";
+		};
+		300038ED93FF30632F05C59B46A47639 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41874BCD9367D77DFC54A07164730B19 /* MSCollectionViewCalendarLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		41874BCD9367D77DFC54A07164730B19 /* MSCollectionViewCalendarLayout */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A8B1D578C243A4244772DB23BF77B /* MSCollectionViewCalendarLayout.h */,
+				FC941FABCF2C26B864791DA4F9DD7BBB /* MSCollectionViewCalendarLayout.m */,
+				ABBD28E631C12951FB827CBAD62FD9ED /* Support Files */,
+			);
+			name = MSCollectionViewCalendarLayout;
+			path = MSCollectionViewCalendarLayout;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				300038ED93FF30632F05C59B46A47639 /* Pods */,
+				D2BC4D03671DDA45FD9C1816752CA708 /* Products */,
+				0FB2AFFBD4F9E39F7D5F9184B1B27B95 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ABBD28E631C12951FB827CBAD62FD9ED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				02FBF7F5125E7EAD7EF64A7087E58BDF /* Info.plist */,
+				D6489FA1EA13106C00C28E271AD5CEAC /* MSCollectionViewCalendarLayout.modulemap */,
+				1C4479A749D2BFFA8F6495EE5ED938A5 /* MSCollectionViewCalendarLayout.xcconfig */,
+				C792ABFCB6425A88AFF4CA219F9ED4D5 /* MSCollectionViewCalendarLayout-dummy.m */,
+				7BE1E5CB426C0F90FFB42761CD75687A /* MSCollectionViewCalendarLayout-prefix.pch */,
+				133CED182B00956ED2C297D59E99CE12 /* MSCollectionViewCalendarLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MSCollectionViewCalendarLayout";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2BC4D03671DDA45FD9C1816752CA708 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4C78430ABC13DBF848237F8245BCE94 /* MSCollectionViewCalendarLayout.framework */,
+				FC216F61795155976F059C9B486654A5 /* Pods_AutoEventAddActionExt.framework */,
+				6C790406EB1A5D7C15BF7758BE4AD905 /* Pods_DewDate.framework */,
+				04C42C44FAF176002DCD29A56BEDA5B5 /* Pods_DewDateTests.framework */,
+				AFE7BF71BFA0A760A653650A6FCE3BDE /* Pods_DewDateUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E125AE78D4EA22F39D44D3BD0C174F54 /* Pods-DewDateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				093B87DE43F8A3254FCF59CA1F64A292 /* Info.plist */,
+				2817CFFB0B0BE5BD59CD8CB87F42B3CF /* Pods-DewDateUITests.modulemap */,
+				7079D96E03DAC3AB9CA20080C58C14C5 /* Pods-DewDateUITests-acknowledgements.markdown */,
+				F19646E6D4FC994164560B08BDF76C6D /* Pods-DewDateUITests-acknowledgements.plist */,
+				F7F0444E376DAD12ED36826ED928E52A /* Pods-DewDateUITests-dummy.m */,
+				6034CF6C349410DA8B5420917062AF99 /* Pods-DewDateUITests-frameworks.sh */,
+				3E300CDDA5F6FC06FAD22A603604EECC /* Pods-DewDateUITests-resources.sh */,
+				47D22EA4532EEC72AE2051CCDB12FC61 /* Pods-DewDateUITests-umbrella.h */,
+				940E085B39CD0CB93F5A9C72A9132354 /* Pods-DewDateUITests.debug.xcconfig */,
+				F2823F698C125E28D9664EFBEA775134 /* Pods-DewDateUITests.release.xcconfig */,
+			);
+			name = "Pods-DewDateUITests";
+			path = "Target Support Files/Pods-DewDateUITests";
+			sourceTree = "<group>";
+		};
+		E2F29DE5235518B4B9C949FEB74F6B77 /* Pods-AutoEventAddActionExt */ = {
+			isa = PBXGroup;
+			children = (
+				70BB31BA1FD7E1C7D0ED2AD00E52ED47 /* Info.plist */,
+				11C3A74A3F525277CA34011A4FF7EAA9 /* Pods-AutoEventAddActionExt.modulemap */,
+				8B6F5D14C333940856B5405F62AF31A8 /* Pods-AutoEventAddActionExt-acknowledgements.markdown */,
+				23C9FACD364E119D07D5DD71708ADD76 /* Pods-AutoEventAddActionExt-acknowledgements.plist */,
+				665DC2688081F48907EA0F8A6F9F3D07 /* Pods-AutoEventAddActionExt-dummy.m */,
+				72A049D938C4B832B855690F0EAEC469 /* Pods-AutoEventAddActionExt-resources.sh */,
+				43B53D68736E8045A118B33AF9353AE2 /* Pods-AutoEventAddActionExt-umbrella.h */,
+				CE1DA80540712A0AE20378A080B1EEDE /* Pods-AutoEventAddActionExt.debug.xcconfig */,
+				37665C10E9D69A7BA39E5E32538B05B3 /* Pods-AutoEventAddActionExt.release.xcconfig */,
+			);
+			name = "Pods-AutoEventAddActionExt";
+			path = "Target Support Files/Pods-AutoEventAddActionExt";
+			sourceTree = "<group>";
+		};
+		E49D1FAE37D45DD534BB98E1CE283132 /* Pods-DewDateTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE9CC4625AEB3A3DE85537F93ECEB9C6 /* Info.plist */,
+				5E165360D3265A209DFAEE545AF1B416 /* Pods-DewDateTests.modulemap */,
+				17666AA05D86C4F4EA7248293F5372C9 /* Pods-DewDateTests-acknowledgements.markdown */,
+				7DAA2B37A107B19116E4DCF84B2182CC /* Pods-DewDateTests-acknowledgements.plist */,
+				93C6619440ABB8A39BDECCFD37F0AFB4 /* Pods-DewDateTests-dummy.m */,
+				4336FA5422B3C87EC5FEEF4C5DCC5C26 /* Pods-DewDateTests-frameworks.sh */,
+				DA7A02EDFAEA415A86E748851AA09FA4 /* Pods-DewDateTests-resources.sh */,
+				A71175107C4885C23F3B11056B76EBA2 /* Pods-DewDateTests-umbrella.h */,
+				35D13B2ECE2E9BB087A1F3DAE2CDFBA6 /* Pods-DewDateTests.debug.xcconfig */,
+				23CBEBA029ACD7CA928F31BF186CA7CC /* Pods-DewDateTests.release.xcconfig */,
+			);
+			name = "Pods-DewDateTests";
+			path = "Target Support Files/Pods-DewDateTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		19DBCF74E66B1CA7FB4523DBD8B7E147 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E67CFC63E2795846C208CD9CC6DD8D /* MSCollectionViewCalendarLayout-umbrella.h in Headers */,
+				1A4E7AD5A8871AE1FD8D5006EF2F1273 /* MSCollectionViewCalendarLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47E27B223E5CACAA54EC0EE702E7467A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6433685764A2041C74ECAFD174BAC739 /* Pods-AutoEventAddActionExt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48CD0163A0BD2FFBBD80A9FCD4092827 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5298D4AA7B8A7B0BB8D433FE62D7B55 /* Pods-DewDateTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E12AA899BC6B371851DBECE1D9EE777 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959C3E08576DF8CD6AB2919CBD83EDFB /* Pods-DewDateUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C01B13A1B4F21B8CB0D38044E5E43570 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45030238640BAEC178325B0A08D21DB6 /* Pods-DewDate-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		35DBF5EF033CB1AFD40BF50025A2838E /* MSCollectionViewCalendarLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5116C36CA2CEEC15DA1ADEC21C12C33 /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */;
+			buildPhases = (
+				061AC259FC8180833A1DBC7CBC54C496 /* Sources */,
+				B8F3483EAD2DF4770A390AB34A309FEE /* Frameworks */,
+				19DBCF74E66B1CA7FB4523DBD8B7E147 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSCollectionViewCalendarLayout;
+			productName = MSCollectionViewCalendarLayout;
+			productReference = F4C78430ABC13DBF848237F8245BCE94 /* MSCollectionViewCalendarLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		89F5D1DF0EE59B2440969E65EADAEB37 /* Pods-DewDateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3952C3D99E1801C74651FB98D04D9DE6 /* Build configuration list for PBXNativeTarget "Pods-DewDateTests" */;
+			buildPhases = (
+				C01D078A3B0BA78234A7DFC5C520EFD8 /* Sources */,
+				4C4E49B0E600814B707D0DC8AB41C316 /* Frameworks */,
+				48CD0163A0BD2FFBBD80A9FCD4092827 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-DewDateTests";
+			productName = "Pods-DewDateTests";
+			productReference = 04C42C44FAF176002DCD29A56BEDA5B5 /* Pods_DewDateTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B10C4D56B5839E8307BD5E8F09BB4494 /* Pods-DewDateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C5AD9C99FD9C036913ACFFBEE5BF700 /* Build configuration list for PBXNativeTarget "Pods-DewDateUITests" */;
+			buildPhases = (
+				3153A4680F2917A5EB6408E37938ADF1 /* Sources */,
+				38F9D567A1F40E5E5E6FF1DFA865ECC2 /* Frameworks */,
+				7E12AA899BC6B371851DBECE1D9EE777 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-DewDateUITests";
+			productName = "Pods-DewDateUITests";
+			productReference = AFE7BF71BFA0A760A653650A6FCE3BDE /* Pods_DewDateUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF4D715E9C4BAC41B7475379499C69AE /* Pods-AutoEventAddActionExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F894EACA189BE76F8C60BB94D11D2A /* Build configuration list for PBXNativeTarget "Pods-AutoEventAddActionExt" */;
+			buildPhases = (
+				91E82BA8AFE08E153A69CABA6286D156 /* Sources */,
+				BC29660EEB30FE4A51BEA1A99FA6BE99 /* Frameworks */,
+				47E27B223E5CACAA54EC0EE702E7467A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-AutoEventAddActionExt";
+			productName = "Pods-AutoEventAddActionExt";
+			productReference = FC216F61795155976F059C9B486654A5 /* Pods_AutoEventAddActionExt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8E35AA135DFDAB63EF151DDFC29A88E /* Pods-DewDate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00065FD31BDDDEBC0A462A41B87FC965 /* Build configuration list for PBXNativeTarget "Pods-DewDate" */;
+			buildPhases = (
+				90214E3D2469AB27C8E5DF2DFA54F03A /* Sources */,
+				4BCB625A91445CF80FE9A0AB3E75E973 /* Frameworks */,
+				C01B13A1B4F21B8CB0D38044E5E43570 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10835C82B899BE6C0737D1A1B24AD69C /* PBXTargetDependency */,
+			);
+			name = "Pods-DewDate";
+			productName = "Pods-DewDate";
+			productReference = 6C790406EB1A5D7C15BF7758BE4AD905 /* Pods_DewDate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D2BC4D03671DDA45FD9C1816752CA708 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35DBF5EF033CB1AFD40BF50025A2838E /* MSCollectionViewCalendarLayout */,
+				CF4D715E9C4BAC41B7475379499C69AE /* Pods-AutoEventAddActionExt */,
+				E8E35AA135DFDAB63EF151DDFC29A88E /* Pods-DewDate */,
+				89F5D1DF0EE59B2440969E65EADAEB37 /* Pods-DewDateTests */,
+				B10C4D56B5839E8307BD5E8F09BB4494 /* Pods-DewDateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		061AC259FC8180833A1DBC7CBC54C496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BB23FA9C5B781E33048F84A4549309 /* MSCollectionViewCalendarLayout-dummy.m in Sources */,
+				E1391A7CA811E16A9235A6718AE9C41C /* MSCollectionViewCalendarLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3153A4680F2917A5EB6408E37938ADF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26022FA0686EC59982D1224A904F69AD /* Pods-DewDateUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90214E3D2469AB27C8E5DF2DFA54F03A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B1AE7891695367557D640BE67E01EA /* Pods-DewDate-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91E82BA8AFE08E153A69CABA6286D156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D3A2DB5DF61F736B82C0D7BCEC46C1 /* Pods-AutoEventAddActionExt-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C01D078A3B0BA78234A7DFC5C520EFD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3864E5AA02F25A1C4096F5B0B174C20 /* Pods-DewDateTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10835C82B899BE6C0737D1A1B24AD69C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MSCollectionViewCalendarLayout;
+			target = 35DBF5EF033CB1AFD40BF50025A2838E /* MSCollectionViewCalendarLayout */;
+			targetProxy = 1D125C94FD8D2B1762022275EDE4E6DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		045DDA30B6AA2EA31C38067D5CF51FC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ED7F06BF58EA3D1DCB388249C074A7B /* Pods-DewDate.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDate/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDate/Pods-DewDate.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDate;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		05B34712E05169FA81C1688623A0BE74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C4479A749D2BFFA8F6495EE5ED938A5 /* MSCollectionViewCalendarLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MSCollectionViewCalendarLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MSCollectionViewCalendarLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		20CED75B5C4478A731BBD74B0A09F6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37665C10E9D69A7BA39E5E32538B05B3 /* Pods-AutoEventAddActionExt.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AutoEventAddActionExt/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AutoEventAddActionExt/Pods-AutoEventAddActionExt.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AutoEventAddActionExt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2D331DB7AE2276F635241C8B71EF97F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 940E085B39CD0CB93F5A9C72A9132354 /* Pods-DewDateUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDateUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDateUITests/Pods-DewDateUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDateUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		38D7CEAC4D1E0C8765B421CE136348DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2823F698C125E28D9664EFBEA775134 /* Pods-DewDateUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDateUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDateUITests/Pods-DewDateUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDateUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		66225600477F2A5E1CE912C689D051BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35D13B2ECE2E9BB087A1F3DAE2CDFBA6 /* Pods-DewDateTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDateTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDateTests/Pods-DewDateTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDateTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2CD6D992FDA3FE86433A464EBE65F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23CBEBA029ACD7CA928F31BF186CA7CC /* Pods-DewDateTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDateTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDateTests/Pods-DewDateTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDateTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE5BA9639D110E608873C3D5C8E791A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C4479A749D2BFFA8F6495EE5ED938A5 /* MSCollectionViewCalendarLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MSCollectionViewCalendarLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MSCollectionViewCalendarLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C6256B82A0ACA50F9DED750929EA22C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1DA80540712A0AE20378A080B1EEDE /* Pods-AutoEventAddActionExt.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AutoEventAddActionExt/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AutoEventAddActionExt/Pods-AutoEventAddActionExt.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AutoEventAddActionExt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD55D6459501503F0428C9E3F874CB0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5F7CCFF86340F85BE8D0D844CD8E68 /* Pods-DewDate.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DewDate/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DewDate/Pods-DewDate.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DewDate;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00065FD31BDDDEBC0A462A41B87FC965 /* Build configuration list for PBXNativeTarget "Pods-DewDate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045DDA30B6AA2EA31C38067D5CF51FC8 /* Debug */,
+				CD55D6459501503F0428C9E3F874CB0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */,
+				862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3952C3D99E1801C74651FB98D04D9DE6 /* Build configuration list for PBXNativeTarget "Pods-DewDateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66225600477F2A5E1CE912C689D051BD /* Debug */,
+				B2CD6D992FDA3FE86433A464EBE65F99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F894EACA189BE76F8C60BB94D11D2A /* Build configuration list for PBXNativeTarget "Pods-AutoEventAddActionExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6256B82A0ACA50F9DED750929EA22C0 /* Debug */,
+				20CED75B5C4478A731BBD74B0A09F6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C5AD9C99FD9C036913ACFFBEE5BF700 /* Build configuration list for PBXNativeTarget "Pods-DewDateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D331DB7AE2276F635241C8B71EF97F9 /* Debug */,
+				38D7CEAC4D1E0C8765B421CE136348DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5116C36CA2CEEC15DA1ADEC21C12C33 /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5BA9639D110E608873C3D5C8E791A4 /* Debug */,
+				05B34712E05169FA81C1688623A0BE74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
