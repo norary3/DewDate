@@ -249,7 +249,7 @@ class ActionTableViewController: UITableViewController {
                             continue
                         }
                         if endFlag == false {
-                            self.eventEnd = (self.cal as NSCalendar).date(byAdding: .NSHourCalendarUnit, value: 2, to: self.eventStart, options: .wrapComponents)!
+                            self.eventEnd = (self.cal as NSCalendar).date(byAdding: .hour, value: 2, to: self.eventStart, options: .wrapComponents)!
                         }
                     }
                     self.eventMemo += line + "\n"

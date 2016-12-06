@@ -27,19 +27,23 @@ class MonthlyViewController:UIViewController, FSCalendarDataSource, FSCalendarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.calendar.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesUpperCase]
-        //self.calendar.select(self.formatter.date(from: "2015/10/10")!)
-        //        self.calendar.scope = .week
-        self.calendar.scopeGesture.isEnabled = true
-        //        calendar.allowsMultipleSelection = true
+        //calendar.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesUpperCase]
+        //calendar.select(self.formatter.date(from: "2015/10/10")!)
+        //calendar.scope = .week
+        calendar.scopeGesture.isEnabled = true
+        calendar.appearance.headerDateFormat = "MMM yy" // ex) "Jul 15"
+        calendar.scrollDirection = .vertical // vertical scroll of month
+        //calendar.allowsMultipleSelection = true
         
         // Uncomment this to test month->week and week->month transition
+        /*
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (2.5 * Double(NSEC_PER_SEC))) {
             self.calendar.setScope(.week, animated: true)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (1.5 * Double(NSEC_PER_SEC))) {
                 self.calendar.setScope(.month, animated: true)
             }
         }
+        */
         
         
     }
@@ -85,6 +89,18 @@ class MonthlyViewController:UIViewController, FSCalendarDataSource, FSCalendarDe
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
+        }
+        calendar.setScope(.week, animated: true)
+        
+    }
+    
+    // FSCalendarDataSource
+    // function for runa calendar
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        if gregorian.component(.weekday, from: date) == 4 {
+            return "(음) 5.5"
+        } else {
+            return ""
         }
     }
     
