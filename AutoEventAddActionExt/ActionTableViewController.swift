@@ -9,6 +9,32 @@
 import UIKit
 import MobileCoreServices
 import EventKit
+import Foundation
+
+//제목 , 위치, 시간
+let text = "{\"놀이공원\":[ 1, 0, 0 ], \"롯데월드\":[ 0, 1, 0 ], \"안암\":[ 0, 1, 0 ],\"아남\":[ 0, 1, 0 ],\"박종훈\":[ 1, 0, 0 ],\"고려대\":[ 0, 1, 0 ],\"시험\":[ 1, 0, 0 ] }"
+let data = text.data(using: String.Encoding.utf8)
+/////
+
+class OurJSONParser {
+    func parseJSONResults() -> [String: AnyObject]? {
+        do {
+            if let data = data,
+                let json = try JSONSerialization.jsonObject(with: data, options:[]) as? [String: AnyObject] {
+                return json
+            } else {
+                print("No Data :/")
+            }
+        } catch {
+            // 실패한 경우, 오류 메시지를 출력합니다.
+            print("Error, Could not parse the JSON request")
+        }
+        
+        return nil
+    }
+}
+
+
 
 extension String {
     public func indexOfCharacter(_ char: Character) -> Int? {
@@ -27,6 +53,7 @@ extension String {
         return dateFromString
     }
 }
+
 
 extension Date
 {
@@ -146,6 +173,10 @@ class ActionTableViewController: UITableViewController {
         }
     }
     
+
+    
+    
+    
     @IBAction func cancelButton(_ sender: AnyObject) {
         // 이 함수는 입력 아이템을 unpacking하는 과정을 반대로 한다. 첫번째로 수정된 컨텐츠(convertedString)와 컨텐츠 타입 식별자(여기서는 kUTTypeText)로 구성한 새로운 NSItemProvider인스턴스를 생성한다.
         //let returnProvider = NSItemProvider(item:convertingString, typeIdentifier: kUTTypeText as NSString as String)
@@ -228,10 +259,64 @@ class ActionTableViewController: UITableViewController {
                     if line != "" {
                         let front = line.substring(to: line.characters.index(line.startIndex, offsetBy: 2))
                         let back = line.substring(from: line.characters.index(line.startIndex, offsetBy: 3))
+                        
+                        let parser = OurJSONParser()
+                        let result = parser.parseJSONResults()
+                        
+                        var a = -1
+                        let sequence = [0,1,2]
+                        
+                        for word in result!{
+                            if back == word.key{
+                                for i in sequence {
+                                    if word.value[i] as! Int > a{
+                                        a = i
+                                    }
+                                }
+                                print(a)
+                                //self.eventLocation =  (word.value)[0];
+                                //var likely_element = "제목"
+                                /*
+                                for attribute in word.value {
+                                    if word.value[attribute] as! Int > word.value[likely_element] as! Int {
+                                        likely_element = attribute as! String
+                                    }
+                                    a = attribute as! String
+                                }*/
+                            }
+                        }
+                        switch a {
+                        case 0:
+                            titleFlag = true
+                            self.eventTitle = back
+                        case 1:
+                            locationFlag = true
+                            self.eventLocation = back
+                        case 2:
+                            startFlag = true
+                            let startString = self.parsDate(back)
+                            self.eventStart = startString.toDateTime(self.dateFormatter)
+                        default: titleFlag=true
+                            self.eventTitle = "sdzsdfszdf"
+                            
+                        }
+                        
+                        /*
                         switch front {
                         case "제목" :
                             titleFlag = true
-                            self.eventTitle = back
+                            let parser = OurJSONParser()
+                            let result = parser.parseJSONResults()
+                  
+                            if let result = result,
+                                let id = result["제목"] as? String,
+                                let name = result["위치"] as? String {
+                                
+                                if back == name {self.eventTitle = name}
+                                else {self.eventTitle = "nonono"}
+                                
+                            }
+                            //self.eventTitle = back
                         case "위치",
                              "장소" :
                             locationFlag = true
@@ -247,7 +332,7 @@ class ActionTableViewController: UITableViewController {
                             //self.endCheck()
                         default:
                             continue
-                        }
+                        }*/
                         if endFlag == false {
                             self.eventEnd = (self.cal as NSCalendar).date(byAdding: .hour, value: 2, to: self.eventStart, options: .wrapComponents)!
                         }
