@@ -12,9 +12,14 @@ import EventKit
 import Foundation
 
 //제목 , 위치, 시간
-let text = "{\"놀이공원\":[ 1, 0, 0 ], \"롯데월드\":[ 0, 1, 0 ], \"안암\":[ 0, 1, 0 ],\"아남\":[ 0, 1, 0 ],\"박종훈\":[ 1, 0, 0 ],\"고려대\":[ 0, 1, 0 ],\"시험\":[ 1, 0, 0 ] }"
+let text = "{\"놀이공원\":[ 1, 0, 0 ], \"롯데월드\":[ 0, 1, 0 ], \"안암\":[ 0, 1, 0 ],\"고려대\":[ 0, 1, 0 ],\"15:40\":[ 0, 0, 1 ], \"캠씨발표\":[ 1, 0, 0 ], \"창의관106호\":[ 0, 1, 0 ],\"8시\":[0,0,1] }"
 let data = text.data(using: String.Encoding.utf8)
 /////
+
+// 예문: 놀이공원 가요 롯데월드로 8시까지 오세요
+// 예문: 우리팀 캠씨발표 창의관106호에서 15:40에 진행
+
+
 
 class OurJSONParser {
     func parseJSONResults() -> [String: AnyObject]? {
@@ -31,6 +36,14 @@ class OurJSONParser {
         }
         
         return nil
+    }
+}
+
+extension String
+{
+    func replace(target: String, withString: String) -> String
+    {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
 }
 
@@ -254,50 +267,75 @@ class ActionTableViewController: UITableViewController {
                 var endFlag = false
                 var memoFlag = false
                 
-                let lines = parsingString.components(separatedBy: "\n")
+                let lines = parsingString.components(separatedBy: " ") // 띄
                 for line in lines {
                     if line != "" {
-                        let front = line.substring(to: line.characters.index(line.startIndex, offsetBy: 2))
-                        let back = line.substring(from: line.characters.index(line.startIndex, offsetBy: 3))
+                        //et front = line.substring(to: line.characters.index(line.startIndex, offsetBy: 2))
+                        //let back = line.substring(from: line.characters.index(line.startIndex, offsetBy: 3))
                         
                         let parser = OurJSONParser()
                         let result = parser.parseJSONResults()
+                        var tmp_line = line
                         
+                    
                         var a = -1
                         let sequence = [0,1,2]
                         
                         for word in result!{
-                            if back == word.key{
+                            
+                            let tmp_1 = line.substring(from: line.characters.index(line.endIndex, offsetBy: -1))
+                            let tmp_2 = line.substring(from: line.characters.index(line.endIndex, offsetBy: -2))
+                            
+                            
+                            switch tmp_1{
+                            case "로":
+                                tmp_line = line.replace(target: tmp_1,withString:"")
+                            case "에":
+                                tmp_line = line.replace(target: tmp_1,withString:"")
+                            case "은":
+                                tmp_line = line.replace(target: tmp_1,withString:"")
+                            default:
+                                break;
+                            }
+                            
+                            
+                            switch tmp_2{
+                            case "에서":
+                                tmp_line = line.replace(target: tmp_2,withString:"")
+                            case "까지":
+                                tmp_line = line.replace(target: tmp_2,withString:"")
+                            case "부터":
+                                tmp_line = line.replace(target: tmp_2,withString:"")
+                            case "으로":
+                                tmp_line = line.replace(target: tmp_2,withString:"")
+                            default:
+                                break;
+                            }
+                            
+                            if tmp_line == word.key{
+                                
                                 for i in sequence {
                                     if word.value[i] as! Int > a{
                                         a = i
                                     }
                                 }
-                                print(a)
-                                //self.eventLocation =  (word.value)[0];
-                                //var likely_element = "제목"
-                                /*
-                                for attribute in word.value {
-                                    if word.value[attribute] as! Int > word.value[likely_element] as! Int {
-                                        likely_element = attribute as! String
-                                    }
-                                    a = attribute as! String
-                                }*/
                             }
                         }
+                       
                         switch a {
                         case 0:
                             titleFlag = true
-                            self.eventTitle = back
+                            self.eventTitle = tmp_line
                         case 1:
                             locationFlag = true
-                            self.eventLocation = back
+                            self.eventLocation = tmp_line
                         case 2:
                             startFlag = true
-                            let startString = self.parsDate(back)
+                            let startString = self.parsDate(tmp_line)
                             self.eventStart = startString.toDateTime(self.dateFormatter)
-                        default: titleFlag=true
-                            self.eventTitle = "sdzsdfszdf"
+                        default:
+                            self.eventMemo += line + "\n"
+                            continue
                             
                         }
                         
@@ -569,9 +607,16 @@ class ActionTableViewController: UITableViewController {
         if let intIndex = rest.indexOfCharacter(":"), let hourFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
             hour = hourFromStirng
             rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
-        } else {
+        }
+        else if let intIndex = rest.indexOfCharacter("시"), let hourFromStirng = Int(rest.substring(to: rest.characters.index(rest.startIndex, offsetBy: intIndex))) {
+            hour = hourFromStirng
+            rest = rest.substring(from: rest.characters.index(rest.startIndex, offsetBy: intIndex+1)).trimmingCharacters( in: spaceSet )
+        }
+
+        else {
             hour = Date().hour()
         }
+        
         // parsing minute
         if let minuteFromString = Int(rest) {
             minute = minuteFromString
